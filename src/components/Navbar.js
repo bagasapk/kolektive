@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { FormControl } from "react-bootstrap";
-import logoKolektive from "../Images/logoKolektive.png"
+import logoKolektive from "../images/logoKolektive.png"
 import { AiOutlineSearch } from 'react-icons/ai'
 
 export default function Navbar(){

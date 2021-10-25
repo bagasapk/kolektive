@@ -2,17 +2,17 @@ import React from "react";
 import CarouselImg from "../components/CarouselImg";
 import Navbar from "../components/Navbar";
 import { CarouselData } from "../components/CarouselData";
-import donate01 from "../Images/DonatePict/donate01.png";
-import donate02 from "../Images/DonatePict/donate02.png";
-import donate03 from "../Images/DonatePict/donate03.png";
-import donate04 from "../Images/DonatePict/donate04.png";
-import donate05 from "../Images/DonatePict/donate05.png";
-import donate06 from "../Images/DonatePict/donate06.png";
-import donate07 from "../Images/DonatePict/donate07.png";
-import donate08 from "../Images/DonatePict/donate08.png";
-import donate09 from "../Images/DonatePict/donate09.png";
+import donate01 from "../images/DonatePict/donate01.png";
+import donate02 from "../images/DonatePict/donate02.png";
+import donate03 from "../images/DonatePict/donate03.png";
+import donate04 from "../images/DonatePict/donate04.png";
+import donate05 from "../images/DonatePict/donate05.png";
+import donate06 from "../images/DonatePict/donate06.png";
+import donate07 from "../images/DonatePict/donate07.png";
+import donate08 from "../images/DonatePict/donate08.png";
+import donate09 from "../images/DonatePict/donate09.png";
 import Footer from "../components/Footer";
-import logoKolektive from "../Images/logoKolektive.png"
+import logoKolektive from "../images/logoKolektive.png"
 
 const Event = () => {
   return (

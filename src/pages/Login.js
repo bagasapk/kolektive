@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlinePeople } from 'react-icons/md'
-import logoLogin from "../Images/logoLogin.png"
+import logoLogin from "../images/logoLogin.png"
 import Navbar from "../components/Navbar"
 
 const Form = () => {

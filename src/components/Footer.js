@@ -1,5 +1,5 @@
 import React from 'react'
-import logoKolektive from "../Images/logoKolektive.png"
+import logoKolektive from "../images/logoKolektive.png"
 const Footer = () => {
     return (
         <div className="containerFooter">
