@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import syncfest from "../images/syncfest.png";
 import peep from "../images/avatar-5.png";
 import Navbar from "../components/Navbar";
 
 const Donate = () => {
+  useEffect(() => {
+    //change this to the script source you want to load, for example this is snap.js sandbox env
+    const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
+    //change this according to your client-key
+    const myMidtransClientKey = "SB-Mid-client-hAgklhCOsxde44UO";
+
+    let scriptTag = document.createElement("script");
+    scriptTag.src = midtransScriptUrl;
+    // optional if you want to set script attribute
+    // for example snap.js have data-client-key attribute
+    scriptTag.setAttribute("data-client-key", myMidtransClientKey);
+    document.body.appendChild(scriptTag);
+    return () => {
+      document.body.removeChild(scriptTag);
+    };
+  }, []);
+
+  const donateHandleClick = (transaction_id) => {
+    window.snap.pay(transaction_id);
+  };
   return (
     <div>
       <Navbar />
@@ -51,7 +71,7 @@ const Donate = () => {
               <i class="bi bi-share"></i>
               <p className="m-2 mx-4 progressDetails shareEventText">Bagikan</p>
             </button>
-            <button className="boostNow rounded">
+            <button onClick={() => donateHandleClick("a")} className="boostNow rounded">
               <p className="m-2 p-1">Boost Sekarang!</p>
             </button>
           </div>
