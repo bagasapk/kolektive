@@ -1,17 +1,27 @@
 import React from "react";
+import { MdOutlinePeople } from 'react-icons/md'
+import logoLogin from "../Images/logoLogin.png"
+import Navbar from "../components/Navbar"
 
 const Form = () => {
   return (
+  // <Navbar/>
+  <div className="borderBox">
+    <img className="logoLogin" src={logoLogin}/>
     <div className="loginContainer">
       <form action="/">
         <div className="loginRow">
           <div className="borderBoxLogin">
-            <input
+            <div className="textLogin">
+              SIGN IN
+              </div>
+              <h6 className="txtLogin mx-auto">You don’t think you should login first and behave like human not robot.</h6>
+            <input 
               type="text"
               name="email"
               placeholder="Email"
               required
-            ></input>
+             ></input>
           </div>
           <div>
             <input
@@ -19,31 +29,39 @@ const Form = () => {
               name="password"
               placeholder="Password"
               required
-            ></input>
+              ></input>
           </div>
         </div>
         <div className="loginRow2">
-          <div className="checkbox">
+          {/* <div className="checkbox">
             <input type="checkbox"></input>
             <p className="rememberMe">Remember Me</p>
-          </div>
+          </div> */}
           <div className="login">
-            <input type="submit" value="Login"></input>
+            <button className="buttonLgn" type="submit"> SIGN IN</button>
           </div>
-          <a href="/forget" className="forgotPassword">
+          <p className="createAcc"> You are new? <a href="/create" style={{color:"tomato"}}> Create new </a></p>
+          {/* <a href="/forget" className="forgotPassword">
             Forgot Password?
-          </a>
+          </a> */}
+        </div>
+        <div className="login">
+          <button className="buttonGgl" type="submit">SIGN IN WITH GOOGLE</button>
+        </div>
+        <div className="login">
+          <button className="buttonFb" type="submit">SIGN IN WITH FACEBOOK</button>
         </div>
         <div className="loginRow2">
-          OR
+        
           <div className="/">
-            <a href="/register" className="signUp">
+            {/* <a href="/register" className="signUp">
               Sign Up
-            </a>
+            </a> */}
           </div>
         </div>
       </form>
     </div>
+  </div>
   );
 };
 export default Form;
