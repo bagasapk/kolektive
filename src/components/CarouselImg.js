@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { CarouselData } from './CarouselData'
-import Navbar from "./Navbar"
 import {IoIosArrowDroprightCircle,IoIosArrowDropleftCircle} from 'react-icons/io'
 
 const CarouselImg = ({ slides }) => {

@@ -12,7 +12,6 @@ import donate07 from "../images/DonatePict/donate07.png";
 import donate08 from "../images/DonatePict/donate08.png";
 import donate09 from "../images/DonatePict/donate09.png";
 import Footer from "../components/Footer";
-import logoKolektive from "../images/logoKolektive.png"
 
 const Event = () => {
   return (
@@ -57,7 +56,7 @@ const Event = () => {
 
       <div class="card-group">
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate01} alt="Card image cap" />
+          <img class="card-img-top" src={donate01} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -71,7 +70,7 @@ const Event = () => {
           </div>
         </div>
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate02} alt="Card image cap" />
+          <img class="card-img-top" src={donate02} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -84,7 +83,7 @@ const Event = () => {
           </div>
         </div>
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate03} alt="Card image cap" />
+          <img class="card-img-top" src={donate03} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -101,7 +100,7 @@ const Event = () => {
 
       <div class="card-group">
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate04} alt="Card image cap" />
+          <img class="card-img-top" src={donate04} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -115,7 +114,7 @@ const Event = () => {
           </div>
         </div>
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate05} alt="Card image cap" />
+          <img class="card-img-top" src={donate05} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -128,7 +127,7 @@ const Event = () => {
           </div>
         </div>
         <div class="card" style={{ margin: "20px 50px" }}>
-          <img class="card-img-top" src={donate06} alt="Card image cap" />
+          <img class="card-img-top" src={donate06} alt="" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -144,7 +143,7 @@ const Event = () => {
 
         <div class="card-group">
           <div class="card" style={{ margin: "20px 50px" }}>
-            <img class="card-img-top" src={donate07} alt="Card image cap" />
+            <img class="card-img-top" src={donate07} alt="" />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -158,7 +157,7 @@ const Event = () => {
             </div>
           </div>
           <div class="card" style={{ margin: "20px 50px" }}>
-            <img class="card-img-top" src={donate08} alt="Card image cap" />
+            <img class="card-img-top" src={donate08} alt="" />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -171,7 +170,7 @@ const Event = () => {
             </div>
           </div>
           <div class="card" style={{ margin: "20px 50px" }}>
-            <img class="card-img-top" src={donate09} alt="Card image cap" />
+            <img class="card-img-top" src={donate09} alt="" />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">

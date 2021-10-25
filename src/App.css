@@ -6,11 +6,11 @@ body {
 .App {
   text-align: center;
 }
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
@@ -50,28 +50,27 @@ button:hover{
 }
 /* NAVBAR */
 
-.Navbar{
-  background-color: #EF5089;
+.Navbar {
+  background-color: #ef5089;
   width: 100%;
   height: 80px;
   display: flex;
 }
 
-.Navbar .leftSide{
+.Navbar .leftSide {
   flex: 50%;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.Navbar .leftSide .links{
+.Navbar .leftSide .links {
   max-height: 80px;
 }
 
-
-.Navbar .leftSide .links a{
-  padding-left:50px;
-  justify-content:space-around;
+.Navbar .leftSide .links a {
+  padding-left: 50px;
+  justify-content: space-around;
   text-decoration: none;
   color: #ffffff;
   font-size: 25px;
@@ -86,27 +85,25 @@ button:hover{
   display: none;
 } */
 
-.Navbar .rightSide{
+.Navbar .rightSide {
   flex: 50%;
   display: flex;
   align-items: center;
-  
 }
 
-.rightSide input{
+.rightSide input {
   width: 220px;
   height: 40px;
   border: none;
   /* border-radius: 4px; */
   font-size: 20px;
   color: #000;
-
 }
 
-.rightSide button{
-  background-color:#EF5089;
+.rightSide button {
+  background-color: #ef5089;
   /* color: #fff; */
-  border:none;
+  border: none;
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -116,42 +113,41 @@ button:hover{
   border:none;
 } */
 
-.logoKolektive{
+.logoKolektive {
   float: left;
   display: flex;
   align-items: center;
   height: 55px;
-  margin-left:40px;
+  margin-left: 40px;
 }
 
-@media only screen and (max-width:850px) {
-  .Navbar .leftSide .links a{
-    font-size:20px
+@media only screen and (max-width: 850px) {
+  .Navbar .leftSide .links a {
+    font-size: 20px;
   }
 }
-@media only screen and (max-width:750px) {
-  .Navbar .leftSide .links a{
-    font-size:15px
+@media only screen and (max-width: 750px) {
+  .Navbar .leftSide .links a {
+    font-size: 15px;
   }
 }
-@media only screen and (max-width:750px) {
-  .Navbar .leftSide button{
+@media only screen and (max-width: 750px) {
+  .Navbar .leftSide button {
     display: flex;
   }
-  .Navbar .leftSide .links{
+  .Navbar .leftSide .links {
     display: none;
   }
 }
-  
+
 /* NAVBAR */
 
-
 /* Login */
-.borderBox{
+.borderBox {
   position: relative;
   /* width: 672px; */
   min-height: 753px;
-  background-color: #EF5089;
+  background-color: #ef5089;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -164,41 +160,41 @@ button:hover{
   box-sizing: border-box;
   border: 3px solid #000;
   height: 575px;
-  margin-top:180px;
+  margin-top: 180px;
   width: 450px;
   position: relative;
 }
 
-.textLogin{
-  font-family:Poppins;
-  font-style:normal;
+.textLogin {
+  font-family: Poppins;
+  font-style: normal;
   font-weight: 700;
   font-size: 3rem;
   line-height: 96px;
   text-align: center;
   color: #000000;
-  margin: 5px 0 0 0 ;
+  margin: 5px 0 0 0;
 }
-.txtLogin{
-  text-align:center;
+.txtLogin {
+  text-align: center;
   font-style: normal;
   font-size: 12px;
-  width:200px;
-  margin:5px 0 10px 0;
+  width: 200px;
+  margin: 5px 0 10px 0;
 }
-.logoLogin{
+.logoLogin {
   position: absolute;
   width: 377px;
   height: 640px;
   top: -70px;
 }
-.login{
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12px 0 0 0;
 }
-.createAcc{
+.createAcc {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -207,40 +203,38 @@ button:hover{
   /* padding:0px; */
   margin: 2px;
 }
-.buttonLgn{
-  width:180px;
+.buttonLgn {
+  width: 180px;
   font-size: large;
   font-weight: bold;
   height: 50px;
-  background: #FFBD12;
-  border: 3px solid #18191F;
+  background: #ffbd12;
+  border: 3px solid #18191f;
   box-sizing: border-box;
   border-radius: 10px;
-  cursor:pointer;
+  cursor: pointer;
 }
-.buttonGgl{
-  width:400px;
+.buttonGgl {
+  width: 400px;
   font-size: large;
   font-weight: bold;
   color: #ffff;
   height: 50px;
-  background:#BCBDC2;
+  background: #bcbdc2;
   box-sizing: border-box;
   border-radius: 10px;
   cursor: pointer;
-  ;
 }
-.buttonFb{
-  width:400px;
+.buttonFb {
+  width: 400px;
   font-size: large;
   font-weight: bold;
   color: #ffff;
   height: 50px;
-  background:#0B21E2;
+  background: #0b21e2;
   box-sizing: border-box;
   border-radius: 10px;
   cursor: pointer;
-  ;
 }
 .loginRow {
   display: grid;
@@ -255,7 +249,7 @@ button:hover{
   grid-gap: 20px;
   text-align: center;
 }
-.rememberMe{
+.rememberMe {
   margin: 0;
   padding: 0;
 }
@@ -281,18 +275,17 @@ input[type="number"] {
   padding:15px 0 0 50px;
 } */
 
-
 /* Carousel */
-.slider{
+.slider {
   position: relative;
-  height:80vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.eventImg{
+.eventImg {
   width: 100%;
-  height:80%;
+  height: 80%;
   border-radius: 5px;
   display: flex;
   text-align: center;
@@ -301,48 +294,47 @@ input[type="number"] {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
   border-radius: 0px 0px 32px 32px;
 }
-.right-arrow{
+.right-arrow {
   position: absolute;
-  top:50%;
+  top: 50%;
   right: 10%;
   font-size: 4rem;
-  color:#000;
+  color: #000;
   font-weight: 100;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
-.left-arrow{
+.left-arrow {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 10%;
   font-size: 4rem;
-  color:#000;
+  color: #000;
   font-weight: 100;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 }
 /* Event Page*/
-.searchEvt{
+.searchEvt {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
   height: 150px;
-  background: #5A0F5B; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  background: #5a0f5b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   /* top:20px; */
-  margin-bottom:50px ;
-  
+  margin-bottom: 50px;
 }
-.searchBoxEvt{
+.searchBoxEvt {
   flex: 50%;
   float: left;
 }
-.searchBoxEvt p{
+.searchBoxEvt p {
   float: left;
   flex: 50%;
   font-size: 20px;
@@ -351,11 +343,11 @@ input[type="number"] {
   justify-content: center;
   color: #ffff;
 }
-.inputBox{
+.inputBox {
   float: left;
-  display:flexbox;
-  text-align:center;
-  justify-content:last baseline;
+  display: flexbox;
+  text-align: center;
+  justify-content: last baseline;
   background-color: transparent;
   border-color: transparent;
   color: #fff;
@@ -365,13 +357,12 @@ input[type="number"] {
   /* border-bottom: 1px solid #fff !important; */
 }
 
-
-.upcomingEvents{
+.upcomingEvents {
   margin-bottom: 50px;
   text-align: center;
   width: 80%;
   height: 170px;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   border-radius: 34px;
   box-sizing: border-box;
 }
@@ -393,28 +384,28 @@ input[type="number"] {
   line-height: 96px;
   margin: 30px 50px;
 }
-.txtUpcoming select{
+.txtUpcoming select {
   /* padding: 50px; */
   display: flex;
   justify-content: center;
   text-align: center;
-  margin:50px 30px;
+  margin: 50px 30px;
   width: 200px;
   height: 43px;
   top: 200px;
-  color:#000;
-  background: #D9D4DB;
+  color: #000;
+  background: #d9d4db;
   border-radius: 14px;
 }
-.btnLoadEvent{
-  margin:20px 0px;
-  padding-top:13px;
+.btnLoadEvent {
+  margin: 20px 0px;
+  padding-top: 13px;
   width: 15%;
   height: 65px;
   display: flex;
   text-align: center;
   justify-content: center;
-  background: #EEC2E2;
+  background: #eec2e2;
   border-radius: 14px;
   font-family: Poppins;
   font-style: normal;
@@ -428,14 +419,13 @@ input[type="number"] {
 } */
 /*  */
 
-
 /* Footer */
-.containerFooter{
-  background-color: #EF5089;
+.containerFooter {
+  background-color: #ef5089;
   /* height: 50%  ; */
   /* width: 100%; */
 }
-.wrapperFooter{
+.wrapperFooter {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -443,28 +433,27 @@ input[type="number"] {
   height: 20%;
   padding: 50px 50px;
 }
-.columnFooter{
+.columnFooter {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 20px;
   grid-gap: 20px;
 }
-.rowFooter{
+.rowFooter {
   display: flex;
   /* grid-template-columns: repeat(auto-fiil, minmax(230, 1fr)); */
   grid-gap: 20px;
 }
-.Row2{
+.Row2 {
   display: flex;
-  justify-content: start;
-  
+  justify-content: flex-start;
 }
-.Row3{
+.Row3 {
   display: flex;
   justify-content: left;
 }
-.linkFooter{
+.linkFooter {
   color: #efefed;
   margin-bottom: 20px;
   text-decoration: none;
@@ -473,7 +462,7 @@ input[type="number"] {
   display: flex;
 }
 
-.titleFooter{
+.titleFooter {
   color: #fff;
   font-weight: 600;
   font-size: 24px;
@@ -483,11 +472,11 @@ input[type="number"] {
   justify-content: flex-start;
 }
 
-.line{
+.line {
   border: 1px solid #d4d0d0;
 }
 
-.textFooter{
+.textFooter {
   text-align: center;
   display: flex;
   margin-left: 50px;
@@ -496,23 +485,23 @@ input[type="number"] {
   color: #fff;
 }
 
-.imageFooter{
+.imageFooter {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   text-align: center;
-  width:100%;
+  width: 100%;
   height: 100%;
 }
-.imagesFooter{
+.imagesFooter {
   display: flex;
-  justify-content:start;
+  justify-content: flex-start;
   text-align: center;
-  width:100%;
+  width: 100%;
   height: 100%;
   margin-left: 50px;
 }
 /* EndFooter */
-  /* border-radius: 9px;
+/* border-radius: 9px;
   font-size: 1rem;
   text-align: center;
   font-weight: 500;

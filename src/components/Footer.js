@@ -14,13 +14,13 @@ const Footer = () => {
                     <div className="columnFooter">
                         <div className="titleFooter"> IKUTI UPDATE KAMI </div>
                         <div className="Row3">
-                            <a href="#" className="imageFooter">
+                            <a href="/" className="imageFooter">
                                 <img alt="Twitter" src="https://i.ibb.co/3sLSSz0/twitter-1.png"></img>
                             </a>
-                            <a href="#" className="imageFooter">
+                            <a href="/" className="imageFooter">
                                 <img alt="Facebook" src="https://i.ibb.co/PF1798t/facebook-1.png"></img>
                             </a>
-                            <a href="#" className="imageFooter">
+                            <a href="/" className="imageFooter">
                                 <img alt="Instagram" src="https://i.ibb.co/25mw7Bs/INSTAGRAM.png"></img>
                             </a>
                         </div>

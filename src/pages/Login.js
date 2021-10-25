@@ -1,13 +1,11 @@
 import React from "react";
-import { MdOutlinePeople } from 'react-icons/md'
 import logoLogin from "../images/logoLogin.png"
-import Navbar from "../components/Navbar"
 
 const Form = () => {
   return (
   // <Navbar/>
   <div className="borderBox">
-    <img className="logoLogin" src={logoLogin}/>
+    <img alt="logo" className="logoLogin" src={logoLogin}/>
     <div className="loginContainer">
       <form action="/">
         <div className="loginRow">
