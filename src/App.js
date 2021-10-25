@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import Login from'./pages/Login'
+import Register from'./pages/Register'
+import Donate from'./pages/Donate'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Navbar from './components/Navbar';
-import CarouselImg from './components/CarouselImg';
-import { CarouselData } from './components/CarouselData'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Event from "./pages/Event"
 
 function App() {
   return (
     <div className="App">
         <Router>
-        {/* <Navbar/>
-        <CarouselImg slides={CarouselData}/> */}
-        <Route path="/navbar" component={Navbar}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/event" component={Event}/>
-    </Router>
-      </div>
+          <Route path="/event" component={Event}/>
+          <Route exact path="/" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/donate" component={Donate} />
+      </Router>
+    </div>
   );
 }
 
