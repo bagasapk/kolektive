@@ -39,11 +39,11 @@ const Register = () => {
             className="inputRegister d-flex flex-column justify-content-between pt-4"
           >
             <input
-              {...register("name", { required: true })}
+              {...register("firstName", { required: true })}
               type="text"
               placeholder="First Name"
             ></input>
-            <input type="text" placeholder="Last Name"></input>
+            <input {...register("lastName", { required: true })} type="text" placeholder="Last Name"></input>
             <input
               {...register("email", { required: true })}
               type="email"
