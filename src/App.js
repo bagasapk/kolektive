@@ -12,10 +12,10 @@ function App() {
     <div className="App">
       <Router>
         <Route path="/event" component={Event} />
-        <Route exact path="/" component={Register} />
-        <Route path="/login" component={Login} />
+        <Route exact path="/" />row col-md-8 mx-auto my-5 py-2 p-5 campaignInput rounded
         <Route path="/donate" component={Donate} />
         <Route path="/campaign" component={FormCampaign} />
+        <Route path="/register" component={Register} />
       </Router>
     </div>
   );
