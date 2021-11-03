@@ -1,39 +1,46 @@
-import React, {useState} from 'react'
-import { CarouselData } from './CarouselData'
-import {IoIosArrowDroprightCircle,IoIosArrowDropleftCircle} from 'react-icons/io'
+import React, { useState } from "react";
+import { CarouselData } from "./CarouselData";
+import {
+  IoIosArrowDroprightCircle,
+  IoIosArrowDropleftCircle,
+} from "react-icons/io";
 
 const CarouselImg = ({ slides }) => {
-const [current, setCurrent] = useState(0);
-const length = slides.length;
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
 
-const nextSlide = () => {
+  const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-};
+  };
 
-const prevSlide = () => {
+  const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
-};
-console.log(current);
+  };
+  console.log(current);
 
-if(!Array.isArray(slides) || slides.length <= 0){
+  if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
-}
+  }
 
-    return (
-        <section className="slider">
-            <IoIosArrowDropleftCircle className="left-arrow"  onClick={prevSlide}/>
-            <IoIosArrowDroprightCircle className="right-arrow" onClick={nextSlide}/>
+  return (
+    <section className="slider">
+      <IoIosArrowDropleftCircle className="d-none d-md-block left-arrow" />
 
-            {CarouselData.map((slide, index) =>{
-                return(
-                    <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                        {index === current && (<img src={slide.image} alt="Event" className="eventImg"/>)}
-                        
-                    </div>
-                )
-            })}
-        </section>
-    )
-}
+      <IoIosArrowDroprightCircle className="d-none d-md-block right-arrow" />
+      {CarouselData.map((slide, index) => {
+        return (
+          <div
+            className={index === current ? "slide active" : "slide"}
+            key={index}
+          >
+            {index === current && (
+              <img src={slide.image} alt="Event" className="eventImg" />
+            )}
+          </div>
+        );
+      })}
+    </section>
+  );
+};
 
-export default CarouselImg
+export default CarouselImg;

@@ -13,7 +13,7 @@ const Footer = () => {
                     </div>
                     <div className="columnFooter">
                         <div className="titleFooter"> IKUTI UPDATE KAMI </div>
-                        <div className="Row3">
+                        <div className="d-flex flex-nowrap">
                             <a href="/" className="imageFooter">
                                 <img alt="Twitter" src="https://i.ibb.co/3sLSSz0/twitter-1.png"></img>
                             </a>

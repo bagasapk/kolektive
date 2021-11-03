@@ -18,22 +18,46 @@ const Event = () => {
     <div>
       <Navbar />
       <CarouselImg slides={CarouselData} />
-      <div className="searchEvt mx-auto">
-        <div className="searchBoxEvt row" style={{ justifyContent: "center", display: "flex" }}>
+      <div className="searchEvt mx-auto flex-wrap flex-lg-nowrap">
+        <div
+          className="searchBoxEvt row col-12 col-lg-4"
+          style={{ justifyContent: "center", display: "flex" }}
+        >
           <p>Looking For</p>
-          <input type="text" className="inputBox" placeholder="Playlist Festival"/>
+          <input
+            type="text"
+            style={{ width: "90%" }}
+            className="inputBox"
+            placeholder="Playlist Festival"
+          />
         </div>
-        <div className="searchBoxEvt row" style={{ justifyContent: "center", display: "flex" }}>
+        <div
+          className="searchBoxEvt row col-12 col-lg-4"
+          style={{ justifyContent: "center", display: "flex" }}
+        >
           <p>In</p>
-          <input type="text" className="inputBox" placeholder="Bandung" />
+          <input
+            type="text"
+            style={{ width: "90%" }}
+            className="inputBox"
+            placeholder="Bandung"
+          />
         </div>
-        <div className="searchBoxEvt row" style={{ justifyContent: "center", display: "flex" }}>
+        <div
+          className="searchBoxEvt row col-12 col-lg-4"
+          style={{ justifyContent: "center", display: "flex" }}
+        >
           <p>When</p>
-          <input type="text" className="inputBox" placeholder="Any Date" />
+          <input
+            type="text"
+            style={{ width: "90%" }}
+            className="inputBox"
+            placeholder="Any Date"
+          />
         </div>
       </div>
       <div className="upcomingEvents mx-auto">
-        <div className="txtUpcoming">
+        <div className="txtUpcoming flex-wrap flex-lg-nowrap mb-5 mx-xl-3 justify-content-xl-around">
           <p>UPCOMING EVENTS</p>
           <select>
             <option selected="Event Type">Event Type </option>
@@ -185,10 +209,9 @@ const Event = () => {
           </div>
         </div>
 
-        <button className="btnLoadEvent mx-auto">Load More Event</button>
-
+        <button className="col-11 col-md-4 col-xl-3 btnLoadEvent mx-auto">Load More Event</button>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

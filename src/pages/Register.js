@@ -21,18 +21,18 @@ const Register = () => {
       });
 
   return (
-    <div className="d-flex">
-      <div className="sideRegister p-4 text-start">
+    <div className="d-md-flex register">
+      <div className="d-none col-md-6 d-md-block sideRegister p-4 text-start">
         <img
           className="img-fluid w-50"
           alt="kolektive"
           src={logoKolektive}
         ></img>
-        <p className="sideTitle pt-5">Dari Patungan, Raih Kenyataan</p>
+        <p className="col-xl-8 sideTitle pt-5 text-md-start px-md-3 px-lg-5 text-xl-center">Dari Patungan, Raih Kenyataan</p>
       </div>
-      <div className="formRegister p-5 text-start">
-        <h1 className="p-2 titleRegister">Create Account</h1>
-        <div className="px-5 mx-4">
+      <div className="col-md-7 col-xl-8 formRegister p-4 p-md-0 p-lg-5 py-md-5 text-start">
+        <h1 className="p-2 titleRegister text-center">Create Account</h1>
+        <div className="px-3 px-md-5 mx-md-5 mx-lg-0">
           <div className="borderRegister"></div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -43,7 +43,11 @@ const Register = () => {
               type="text"
               placeholder="First Name"
             ></input>
-            <input {...register("lastName", { required: true })} type="text" placeholder="Last Name"></input>
+            <input
+              {...register("lastName", { required: true })}
+              type="text"
+              placeholder="Last Name"
+            ></input>
             <input
               {...register("email", { required: true })}
               type="email"
@@ -74,34 +78,34 @@ const Register = () => {
           <div className="d-flex justify-content-center pt-1">
             <p className="titleRegister">OR</p>
           </div>
-          <div className="d-flex justify-content-around">
-            <div className="d-flex justify-content-between googleButton p-2">
+          <div className="d-lg-flex justify-content-around flex-lg-wrap">
+            <div className="d-flex justify-content-between googleButton p-1 p-lg-2 mx-lg-0 mx-auto">
               <img
                 className="rounded"
                 style={{ background: "white" }}
                 alt="google"
                 src={google}
               ></img>
-              <p className="m-0 align-self-center googleText">
+              <p className="m-0 p-2 align-self-center googleText">
                 SIGN IN WITH GOOGLE
               </p>
             </div>
-            <div className="d-flex justify-content-between facebookButton p-2">
+            <div className="d-flex justify-content-between facebookButton p-1 p-lg-2 mx-lg-0 mx-auto">
               <img
                 className="p-1 rounded"
                 style={{ background: "white" }}
                 alt="google"
                 src={facebook}
               ></img>
-              <p className="m-0 align-self-center googleText">
+              <p className="m-0 p-2 align-self-center googleText">
                 SIGN IN WITH FACEBOOK
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="peep">
-        <img alt="peep2" src={peep2}></img>
+      <div className="d-none d-md-none d-lg-block peep">
+        <img className="img-fluid" alt="peep2" src={peep2}></img>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const Donate = () => {
   return (
     <div>
       <Navbar />
-      <div className="donate px-5">
+      <div className="donate px-md-5">
         {/* <nav className=""></nav> */}
         <div className="donateContainer rounded">
           <div className="px-5 pt-5">
@@ -40,7 +40,7 @@ const Donate = () => {
           <h1 className="text-uppercase text-start px-5 py-2">
             Seminar Nasional Ifest
           </h1>
-          <div className="d-flex px-5">
+          <div className="d-flex px-5 flex-wrap">
             <h2 className="m-0">Rp. 2.158.000</h2>
             <p
               style={{ fontWeight: "600", color: "#837C7C" }}
@@ -77,14 +77,14 @@ const Donate = () => {
           </div>
         </div>
         <div className="donateContainer mt-5 pb-5">
-          <div className="px-5 pt-5 pb-3 w-50">
+          <div className="px-5 pt-5 pb-3 w-md-50">
             <h3 className="p-2 rounded text-center text-uppercase donateSubtitleBox">
               Seminar Nasional Ifest
             </h3>
           </div>
-          <div className="donateEventBox mx-5 ">
-            <div className="d-flex justify-content-between m-4">
-              <div className=" donateEventDesc col-8 text-start">
+          <div className="donateEventBox mx-3 mx-md-5">
+            <div className="d-flex justify-content-between m-4 flex-wrap">
+              <div className=" donateEventDesc col-md-8 text-start">
                 <h4>Deskripsi Event</h4>
                 <p>
                   2021 IEEE International Conference on Artificial Intelligence
@@ -98,7 +98,7 @@ const Donate = () => {
                   Big Data.
                 </p>
               </div>
-              <div className="donateEventInfo col-4 text-start p-2">
+              <div className="donateEventInfo col-md-4 text-start p-2">
                 <div>
                   <i className=""></i>
                   <h5 className="m-0">Kategori</h5>
@@ -156,12 +156,12 @@ const Donate = () => {
           </div>
         </div>
         <div className="donateContainer my-5 text-start pb-5">
-          <div className="px-5 pt-5 pb-3 w-50">
+          <div className="px-5 pt-5 pb-3 w-md-50">
             <h3 className="p-2 rounded text-center text-uppercase donateSubtitleBox">
               Kolega Event
             </h3>
           </div>
-          <div className="donateKolegaBox mx-5 px-4">
+          <div className="donateKolegaBox mx-3 mx-md-5 px-4">
             <div className="d-flex align-items-center my-4">
               <img className="img-fluid" alt="avatar" src={peep}></img>
               <div className="mx-3">
@@ -185,7 +185,7 @@ const Donate = () => {
           </div>
         </div>
         <div className="donateContainer text-start">
-          <div className="px-5 pt-5 pb-3 w-50">
+          <div className="px-5 pt-5 pb-3 w-md-50">
             <h3 className="p-2 rounded text-center text-uppercase donateSubtitleBox">
               Lokasi Event
             </h3>

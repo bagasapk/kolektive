@@ -55,6 +55,7 @@ button:hover {
   width: 100%;
   height: 80px;
   display: flex;
+  z-index: 7;
 }
 
 .Navbar .leftSide {
@@ -282,6 +283,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -1;
 }
 .eventImg {
   width: 100%;
@@ -361,14 +363,14 @@ input[type="number"] {
   margin-bottom: 50px;
   text-align: center;
   width: 80%;
-  height: 170px;
+  /* height: 170px; */
   background-color: whitesmoke;
   border-radius: 34px;
   box-sizing: border-box;
 }
 .txtUpcoming {
   padding-top: 20px;
-  float: left;
+  /* float: left; */
   display: flex;
   text-align: center;
   flex: 50%;
@@ -508,11 +510,10 @@ input[type="number"] {
 } */
 
 /* Register */
+
 .sideRegister {
-  background-image: url("./images/image\ 1.png") !important;
+  background: url("./images/image\ 1.png") repeat !important;
   min-height: 100vh;
-  min-width: 30vw;
-  /* background-repeat: no-repeat; */
 }
 
 .sideTitle {
@@ -527,8 +528,10 @@ input[type="number"] {
   background: #f2f1f1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 30px 0px 0px 30px;
-  min-width: 70vw;
-  margin-left: -4vw;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  min-height: 100vh;
 }
 
 .titleRegister {
@@ -693,7 +696,8 @@ h5 {
 .campaign {
   background: #7939bd;
 }
-.campaignTitle,.campaignDesign{
+.campaignTitle,
+.campaignDesign {
   border: 2px solid black;
   box-shadow: #ef5089 10px 10px;
   background: #2cb5e8;
@@ -704,7 +708,8 @@ h5 {
   text-shadow: #ef5089 3px 3px;
 }
 
-.campaignFoto, .campaignInput {
+.campaignFoto,
+.campaignInput {
   border: 2px solid #fff500;
   background: #ef5089;
   cursor: pointer;
@@ -726,26 +731,201 @@ h5 {
   border-radius: 12px;
 }
 
-.campaignQuote{
+.campaignQuote {
   font-size: 3rem !important;
   font-weight: 900;
   letter-spacing: 0.25rem;
-  color: #FFF500;
+  color: #fff500;
   text-shadow: #ef5089 5px 5px;
 }
 
-.campaignDesign{
-  border: none  ;
+.campaignDesign {
+  border: none;
 }
 
-.campaignDesign2{
+.campaignDesign2 {
   background: #fff500;
 }
 
-.campaignDesign3{
+.campaignDesign3 {
   background: #ef5089;
 }
 
-.campaignPeep{
+.campaignPeep {
   fill: black;
+}
+
+/* Responsive */
+/*
+ * Author: http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
+ */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .formRegister {
+    margin-left: 0px;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .googleButton,
+  .facebookButton {
+    width: max-content;
+    font-size: 0.75rem;
+  }
+  .box {
+    width: 100% !important;
+  }
+  .close-icon{
+    right: 84% !important;
+  }
+}
+
+/* Galaxy Fold */
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  .slider{
+    height: auto;
+  }
+  .searchEvt{
+    height: auto;
+    margin-top: 2rem;
+  }
+  .txtUpcoming p{
+    font-size: 3rem;
+    margin: 0;
+    line-height: 3rem;
+  }
+  .txtUpcoming select{
+    margin: 20px 0;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  .googleButton,
+  .facebookButton {
+    width: max-content;
+    font-size: 0.75rem;
+  }
+  .slider{
+    height: auto;
+  }
+  .txtUpcoming p{
+    font-size: 3rem;
+    margin: 0;
+    line-height: 3rem;
+  }
+  .txtUpcoming select{
+    margin: 20px 0;
+  }
+  .imagesFooter{
+    margin: 0;
+  }
+  .columnFooter{
+    text-align: start;
+  }
+  .searchEvt{
+    height: auto;
+    margin-top: 2rem;
+  }
+  .campaignQuote{
+    font-size: 2.5rem !important;
+  }
+}
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) {
+  .formRegister {
+    width: 100vw;
+  }
+  .googleButton,
+  .facebookButton {
+    width: max-content;
+    font-size: 1rem;
+  }
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .sideTitle {
+    font-size: 1.5rem;
+  }
+  .googleButton,
+  .facebookButton {
+    width: max-content;
+    font-size: 1rem;
+  }
+  .close-icon{
+    right: 67% !important;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .sideTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  .txtUpcoming select{
+    width: 20rem;
+  }
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
+
+/* Popup */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.box {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 80vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  position: fixed;
+  right: 70%;
+  top: calc(100vh - 85vh + 30px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+  z-index: 2;
 }

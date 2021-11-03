@@ -3,6 +3,8 @@ import logoLogin from "../images/logoLogin.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
 import GoogleLogin, { GoogleLogout, useGoogleLogin } from "react-google-login";
+import google from "../images/google.png";
+import facebook from "../images/facebook.png";
 
 const Form = () => {
   const { register, handleSubmit } = useForm();
@@ -11,7 +13,7 @@ const Form = () => {
 
   const onSuccess = (res) => {
     // localStorage.setItem("token",'Bearer '+res.tokenId);
-    sessionStorage.setItem('token',res.tokenId);
+    sessionStorage.setItem("token", res.tokenId);
     AuthenticationService.loginGoogle(res.profileObj)
       .then((response) => {
         console.log(response);
@@ -100,33 +102,38 @@ const Form = () => {
           </div>
           <GoogleLogin
             clientId={clientId}
-            onClick={signIn}
-            render={(renderProps) => (
-              <div className="login">
-                <button
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                  className="buttonGgl"
-                  type="submit"
-                >
+            render={() => (
+              <button
+                style={{ border: "none" }}
+                onClick={signIn}
+                className="d-flex justify-content-between googleButton p-1 p-lg-2 mx-auto"
+              >
+                <img
+                  className="rounded"
+                  style={{ background: "white" }}
+                  alt="google"
+                  src={google}
+                ></img>
+                <p className="m-0 p-2 align-self-center googleText">
                   SIGN IN WITH GOOGLE
-                </button>
-              </div>
+                </p>
+              </button>
             )}
             buttonText="Login"
             onSuccess={onSuccess}
             onFailure={onFailure}
             cookiePolicy={"single_host_origin"}
           />
-          <GoogleLogout
-            clientId={clientId}
-            buttonText="Logout"
-            onLogoutSuccess={onSuccessLogout}
-          />
-          <div className="login">
-            <button className="buttonFb" type="submit">
+          <div className="d-flex justify-content-between facebookButton p-1 p-lg-2 mx-auto">
+            <img
+              className="p-1 rounded"
+              style={{ background: "white" }}
+              alt="google"
+              src={facebook}
+            ></img>
+            <p className="m-0 p-2 align-self-center googleText">
               SIGN IN WITH FACEBOOK
-            </button>
+            </p>
           </div>
           <div className="loginRow2">
             <div className="/">

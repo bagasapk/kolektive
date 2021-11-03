@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import foto from "../images/image-icon.png";
 import Footer from "../components/Footer";
@@ -34,10 +34,10 @@ const FormCampaign = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="row mx-5"
+        className="row mx-3 mx-md-5"
         encType="multipart/form-data"
       >
-        <div className="col-3 mx-5">
+        <div className="col-9 col-lg-3 mx-auto">
           <label
             htmlFor="file"
             className=" text-start my-5 p-2 campaignFoto row rounded"
@@ -60,7 +60,7 @@ const FormCampaign = () => {
           </label>
           <h2 className="text-uppercase campaignQuote">Keep Going Booster</h2>
         </div>
-        <div className="row col-8 my-5 py-2 campaignInput rounded">
+        <div className="row col-md-8 mx-auto my-5 py-2 px-md-5 campaignInput rounded">
           <label htmlFor="title">Judul</label>
           <input
             {...register("title", { required: true })}
