@@ -781,9 +781,7 @@ button[type="submit"] {
   color: #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.heading span{
-  /* margin-top: 200px; */
-}
+
 .typed-words{
   /* width: 100%; */
   display: flex;
@@ -1312,3 +1310,64 @@ button[type="submit"] {
   width: 100%;
 }
 /* LANDING PAGE */
+
+/* Campaign */
+.campaign {
+  background: #7939bd;
+}
+.campaignTitle,.campaignDesign{
+  border: 2px solid black;
+  box-shadow: #ef5089 10px 10px;
+  background: #2cb5e8;
+}
+
+.campaignTitle h1 {
+  color: #fff500;
+  text-shadow: #ef5089 3px 3px;
+}
+
+.campaignFoto, .campaignInput {
+  border: 2px solid #fff500;
+  background: #ef5089;
+  cursor: pointer;
+}
+
+.campaignFotoTitle,
+.campaignInput label {
+  color: #00f0ff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.campaignInput label {
+  text-align: start;
+}
+
+.campaignInput input,
+.campaignInput textarea {
+  border-radius: 12px;
+}
+
+.campaignQuote{
+  font-size: 3rem !important;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  color: #FFF500;
+  text-shadow: #ef5089 5px 5px;
+}
+
+.campaignDesign{
+  border: none  ;
+}
+
+.campaignDesign2{
+  background: #fff500;
+}
+
+.campaignDesign3{
+  background: #ef5089;
+}
+
+.campaignPeep{
+  fill: black;
+}
