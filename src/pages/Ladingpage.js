@@ -1,17 +1,17 @@
 import React from 'react'
 import NavbarLP from '../components/NavbarLP'
-import Vector1 from '../images/vector/Vector1.png'
-import Vector3 from '../images/vector/Vector3.png'
-import background from "../images/syncfest.png"
 import layer2 from "../images/layer2.png"
 import layer3 from "../images/layer3.png"
 import booster from "../images/booster.png"
 import kolega from "../images/kolega.png"
 import music4 from "../images/music4.png"
-import music2 from "../images/music2.png"
-import music3 from "../images/music3.png"
+import music5 from "../images/music5.png"
+import music6 from "../images/music6.png"
 import { AiOutlineClose } from 'react-icons/ai'
 import { FiHeart } from 'react-icons/fi'
+import fotodiza from "../images/fotodiza.jpg"
+import Footer from '../components/Footer'
+
 const ladingpage = () => {
     return (
         <div className="body">
@@ -57,7 +57,33 @@ const ladingpage = () => {
                     </div>
                     <button> Learn More </button>
                     <div className="layer1Pict">
-                        <img src={layer3}/>
+                        {/* <img src={layer3}/> */}
+                        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                        </div>
+                        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img classsName="d=block w-100" src={layer3} alt="First Slide"/>
+                                </div>
+                                <div className="carousel-item ">
+                                    <img classsName="d=block w-100" src={layer2} alt="First Slide"/>
+                                </div>
+                            </div>
+                            <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span className="sr-only">Previous</span>
+                            </a>
+                            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="Next">
+                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span className="sr-only">Next</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="boxKolega mx-auto">
@@ -77,47 +103,88 @@ const ladingpage = () => {
                         <h4>KOLEGA YANG BERGABUNG</h4>
                     </div>
                 </div>
-                <div>
-                    <h1>KOLEKTIVE NEWS</h1>
-                    <div className="linePelangi2">
-                        <div className="line7"></div>
-                        <div className="line8"></div>
-                        <div className="line9"></div>
-                    </div>
+
+                <h1>KOLEKTIVE NEWS</h1>
+                <div className="linePelangi2">
+                    <div className="line7"></div>
+                    <div className="line8"></div>
+                    <div className="line9"></div>
+                </div>
+                <div className="boxHP d-flex">
                     <div className="screenHP">
                         <div className="cameraHP mx-auto">
                             <div className="speaker"></div>
                             <div className="lensa"></div>
-                            </div>
-                            <div className="judulHP">
-                            <a href="#" style={{fontSize:"30px",float:"left", margin:"35px 25px",color:"#000"}}><AiOutlineClose/></a>
+                        </div>
+                        <div className="judulHP">
+                            <a href="#" style={{fontSize:"30px",float:"left", margin:"70px 25px",color:"#000"}}><AiOutlineClose/></a>
                             <p mx-auto>Kalian Tau Ga ?</p>
                         </div>
-                        <div className="imageHP">
-                            <img src={music4}/>
+                        <div className="imageHP mx-auto">
+                            <img mx-auto src={music5}/>
+                        </div>
+                        <div className="topikHP">
                             <p mx-auto>ThanksInfopedia</p>
                             <a href="#"> <FiHeart/> </a>
                             <h5>News</h5>
                         </div>
-                        {/* <div className="barMusic mx-auto">
-                        </div> */}
                     </div>
-                    {/* <div className="screenHP">
+                    
+                    <div className="screenHP">
                         <div className="cameraHP mx-auto">
                             <div className="speaker"></div>
                             <div className="lensa"></div>
-                            <img src={music2}/>
                         </div>
-                    </div> */}
-                    {/* <div className="screenHP">
+                        <div className="judulHP">
+                            <a href="#" style={{fontSize:"30px",float:"left", margin:"70px 25px",color:"#000"}}><AiOutlineClose/></a>
+                            <p mx-auto>Kalian Tau Ga ?</p>
+                        </div>
+                        <div className="imageHP mx-auto">
+                            <img mx-auto src={music4}/>
+                        </div>
+                        <div className="topikHP">
+                            <p mx-auto>ThanksInfopedia</p>
+                            <a href="#"> <FiHeart/> </a>
+                            <h5>News</h5>
+                        </div>
+                    </div>
+
+                    <div className="screenHP">
                         <div className="cameraHP mx-auto">
                             <div className="speaker"></div>
                             <div className="lensa"></div>
-                            <img src={music3}/>
                         </div>
-                    </div> */}
+                        <div className="judulHP">
+                            <a href="#" style={{fontSize:"30px",float:"left", margin:"70px 25px",color:"#000"}}><AiOutlineClose/></a>
+                            <p mx-auto>Kalian Tau Ga ?</p>
+                        </div>
+                        <div className="imageHP mx-auto">
+                            <img mx-auto src={music6}/>
+                        </div>
+                        <div className="topikHP">
+                            <p mx-auto>ThanksInfopedia</p>
+                            <a href="#"> <FiHeart/> </a>
+                            <h5>News</h5>
+                        </div>
+                    </div>
+                </div>
+                <div className="boxJudul1 mx-auto"></div>
+                <div className="judul2 mx-auto">
+                   <p> GIMANA SIH KOLEKTIVE?</p>
+                </div>   
+                <div className="boxJudul2 mx-auto"></div>
+                
+                <div className="layer2LP mx-auto">
+                    <img mx-auto src={fotodiza}/>
+                    <div className="textLayer2 mx-auto">
+                        <p>“Kolektive ngebantu banget sih kalo kata gue, karna menurut gue, ini bukan cuma platform penggalangan doang. gue disini bisa ”</p>
+                        <h3>Hadiza Cahya Firdaus</h3>
+                        <h5>Kolega Event (IFEST)</h5>
+                    </div>
+                   
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
