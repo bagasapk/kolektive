@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import syncfest from "../images/syncfest.png";
 import peep from "../images/avatar-5.png";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarLP";
 
 const Donate = () => {
   useEffect(() => {

@@ -24,9 +24,9 @@ const CarouselImg = ({ slides }) => {
 
   return (
     <section className="slider">
-      <IoIosArrowDropleftCircle className="d-none d-md-block left-arrow" />
+      <IoIosArrowDropleftCircle className="d-none d-md-block left-arrow" onClick={prevSlide}/>
 
-      <IoIosArrowDroprightCircle className="d-none d-md-block right-arrow" />
+      <IoIosArrowDroprightCircle className="d-none d-md-block right-arrow" onClick={nextSlide}/>
       {CarouselData.map((slide, index) => {
         return (
           <div

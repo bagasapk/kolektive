@@ -1,6 +1,6 @@
 import React from "react";
 import CarouselImg from "../components/CarouselImg";
-import Navbar from "../components/Navbar";
+import NavbarLP from "../components/NavbarLP";
 import { CarouselData } from "../components/CarouselData";
 import donate01 from "../images/DonatePict/donate01.png";
 import donate02 from "../images/DonatePict/donate02.png";
@@ -12,11 +12,13 @@ import donate07 from "../images/DonatePict/donate07.png";
 import donate08 from "../images/DonatePict/donate08.png";
 import donate09 from "../images/DonatePict/donate09.png";
 import Footer from "../components/Footer";
+import { AiOutlineSearch } from "react-icons/ai";
+
 
 const Event = () => {
   return (
     <div>
-      <Navbar />
+      <NavbarLP />
       <CarouselImg slides={CarouselData} />
       <div className="searchEvt mx-auto flex-wrap flex-lg-nowrap">
         <div
@@ -55,6 +57,9 @@ const Event = () => {
             placeholder="Any Date"
           />
         </div>
+        <button type="submit" className="m-3">
+          <AiOutlineSearch />
+        </button>
       </div>
       <div className="upcomingEvents mx-auto">
         <div className="txtUpcoming flex-wrap flex-lg-nowrap mb-5 mx-xl-3 justify-content-xl-around">

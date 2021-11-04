@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarLP";
 import foto from "../images/image-icon.png";
 import Footer from "../components/Footer";
 import { useForm } from "react-hook-form";
@@ -29,7 +29,7 @@ const FormCampaign = () => {
   return (
     <div className="campaign">
       <Navbar />
-      <div className="text-start mx-5 mt-5 campaignTitle rounded">
+      <div className="text-start mx-5 campaignTitle rounded">
         <h1 className="m-0 px-5">BIKIN EVENT</h1>
       </div>
       <form
