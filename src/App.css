@@ -9,6 +9,7 @@ body {
 body {
   margin: 0;
   padding: 0;
+  
 }
 button:hover {
   cursor: pointer;
@@ -749,8 +750,8 @@ button[type="submit"] {
 }
 .body {
   width: 100%;
-  height: 500vh;
-  background: #7939bd;
+  height: 100%;
+  background: #7939BD;
 }
 .heroLP {
   position: absolute;
@@ -1162,8 +1163,8 @@ button[type="submit"] {
   position: absolute;
   width: 100%;
   height: 40px;
-  top: 300px;
-  background: #f3e433;
+  top: 350px;
+  background: #F3E433;
   border: 3px solid #000000;
   box-sizing: border-box;
   transform: matrix(-0.99, -0.17, -0.17, 0.99, 0, 0);
@@ -1172,7 +1173,7 @@ button[type="submit"] {
   position: absolute;
   width: 100%;
   height: 40px;
-  top: 340px;
+  top: 390px;
   left: -8px;
   background: #c73cb1;
   border: 3px solid #000000;
@@ -1183,44 +1184,32 @@ button[type="submit"] {
   position: absolute;
   width: 100%;
   height: 40px;
-  top: 380px;
+  top: 430px;
   left: -13px;
   background: #43add0;
   border: 3px solid #000000;
   box-sizing: border-box;
   transform: matrix(-0.99, -0.17, -0.17, 0.99, 0, 0);
 }
-.screenHP {
-  position: absolute;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* margin: 50px; */
+.screenHP{
+  /* position: absolute; */
+  margin:20px;
+  z-index:1;
   right: 40%;
-  width: 22%;
-  height: 85%;
+  width: 24%;
+  height: 795px;
   box-sizing: border-box;
   border-radius: 99px;
   border: 24px solid #454545;
   background-color: #eb6a98;
   /* background: url("./images//music1.png"); */
 }
-/* .screenHP a{
-  position:absolute;
-  top: 5px;
-  right: -0px;
-  width: 100%;
-  height:100%;
-  box-sizing: border-box;
-  border-radius: 99px;
-} */
-.judulHP {
-  display: flex;
-}
-.judulHP p {
+
+
+.judulHP p{
   display: flex;
   text-align: center;
-  padding-top: 45px;
+  padding-top: 80px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
@@ -1261,13 +1250,16 @@ button[type="submit"] {
   border-radius: 50px;
   border: 5px solid gray;
 }
-.imageHP {
-  position: absolute;
+.imageHP{
+  /* position: absolute; */
   width: 90%;
   height: 327px;
-  left: 21px;
-  top: 118px;
-
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  /* left: 21px;
+  top: 118px; */
+  margin-top:70px;
   /* Colors / Red */
 
   background: #f95a2c;
@@ -1277,12 +1269,19 @@ button[type="submit"] {
   box-sizing: border-box;
   border-radius: 16px;
 }
-.imageHP p {
-  position: absolute;
-  /* display: flex; */
+.imageHP img{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+}
+.topikHP p{
+  /* position: abso?lute; */
+  /* margin */
+  display: flex;
   justify-content: start;
   align-items: center;
-  margin-top: 25px;
+  margin: 20px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
@@ -1290,19 +1289,19 @@ button[type="submit"] {
   line-height: 40px;
   color: #18191f;
 }
-.imageHP a {
+.topikHP a{
   float: right;
-  margin-top: 30px;
+  margin: -49px 20px;
   flex: 30%;
   color: #000;
   font-size: 30px;
   display: flex;
 }
-.imageHP h5 {
+.topikHP h5{
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-top: 70px;
+  margin: 20px;
 }
 .barMusic {
   display: flex;
@@ -1311,15 +1310,142 @@ button[type="submit"] {
   margin-top: 480px;
   height: 20px;
   width: 90%;
-  background-color: linear-gradient(to right, blue #ffff);
+  background-color: linear-gradient(to right, blue #ffff);}
+.boxHP{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin:100px;
+}
+.boxJudul1{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 891px;
+  height: 61px;
+
+  background: #F3E433;
+  /* Colors / Black */
+
+  border: 5px solid #18191F;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.boxJudul2{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin : -10px 0px 0px 0px;
+  width: 891px;
+  height: 61px;
+  background: #C73CB1;
+  border: 5px solid #18191F;
+  box-sizing: border-box;
+  border-radius: 16px;
+  z-index: 20;
+}
+.judul2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 935px;
+  height: 117px;
+  margin: -15px ;
+  background: #2CB5E8;
+  border: 5px solid #18191F;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.judul2 p{
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 105px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 105px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFF500;
+
+}
+.layer2LP{
+  margin-top: 40px;
+  margin-bottom:100px; 
+  width: 60%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   box-sizing: border-box;
   border-radius: 50px;
-  border: 1px solid #fff;
+  border: 20px solid #FFF500;
+  background: radial-gradient(50% 50% at 50% 50%, #7939BD 35.94%, #15D9F3 100%);
+border: 20px solid #FFF500;
+border-radius: 72px;
 }
-.circle {
+.textLayer2{
+  display:flex;
+  justify-content:start;
+  text-align:center;
+  /* flex: content; */
+}
+.textLayer2 p{
+  flex:50%;
+  display:flex;
+  margin: 50px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+
+  color: #FFFFFF;
+}
+.layer2LP img {
+  margin: 50px;
   display: flex;
-  height: 20px;
-  width: 100%;
+  flex:50%;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:50vh;
+}
+.textLayer2 h3{
+  position:absolute;
+  width: 50%;
+  margin:400px 20px;
+  display:flex;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 72px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFF500;
+}
+.textLayer2 h5{
+  position: absolute;
+  margin: 470px 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFFFFF;
 }
 /* LANDING PAGE */
 

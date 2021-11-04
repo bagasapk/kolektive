@@ -1,5 +1,3 @@
-
-
 export const CarouselData = [
     {
         image:'https://wallpaperaccess.com/full/2489665.jpg'
