@@ -5,9 +5,38 @@ import facebook from "../images/facebook.png";
 import peep2 from "../images/big-image-2.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
+import GoogleLogin, { useGoogleLogin } from "react-google-login";
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
+
+  const clientId =
+    "1007961814003-4p65g13vnqa0q2q0p8buaf4civv37eqi.apps.googleusercontent.com";
+
+  const onSuccess = (res) => {
+    // localStorage.setItem("token",'Bearer '+res.tokenId);
+    AuthenticationService.loginGoogle(res.profileObj)
+    .then((response) => {
+      console.log(response);
+      localStorage.setItem("token", response.data.success.token);
+        window.location.href = "/";
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  
+  const onFailure = (res) => {
+    console.log("Login Failed: res:", res);
+  };
+
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    onFailure,
+    clientId,
+    isSignedIn: true,
+    accessType: "offline",
+  });
 
   const onSubmit = (data) =>
     AuthenticationService.register(data)
@@ -28,7 +57,9 @@ const Register = () => {
           alt="kolektive"
           src={logoKolektive}
         ></img>
-        <p className="col-xl-8 sideTitle pt-5 text-md-start px-md-3 px-lg-5 text-xl-center">Dari Patungan, Raih Kenyataan</p>
+        <p className="col-xl-8 sideTitle pt-5 text-md-start px-md-3 px-lg-5 text-xl-center">
+          Dari Patungan, Raih Kenyataan
+        </p>
       </div>
       <div className="col-md-7 col-xl-8 formRegister p-4 p-md-0 p-lg-5 py-md-5 text-start">
         <h1 className="p-2 titleRegister text-center">Create Account</h1>
@@ -78,29 +109,31 @@ const Register = () => {
           <div className="d-flex justify-content-center pt-1">
             <p className="titleRegister">OR</p>
           </div>
-          <div className="d-lg-flex justify-content-around flex-lg-wrap">
-            <div className="d-flex justify-content-between googleButton p-1 p-lg-2 mx-lg-0 mx-auto">
-              <img
-                className="rounded"
-                style={{ background: "white" }}
-                alt="google"
-                src={google}
-              ></img>
-              <p className="m-0 p-2 align-self-center googleText">
-                SIGN IN WITH GOOGLE
-              </p>
-            </div>
-            <div className="d-flex justify-content-between facebookButton p-1 p-lg-2 mx-lg-0 mx-auto">
-              <img
-                className="p-1 rounded"
-                style={{ background: "white" }}
-                alt="google"
-                src={facebook}
-              ></img>
-              <p className="m-0 p-2 align-self-center googleText">
-                SIGN IN WITH FACEBOOK
-              </p>
-            </div>
+          <div className="d-lg-flex justify-content-center flex-lg-wrap">
+            <GoogleLogin
+              clientId={clientId}
+              render={() => (
+                <button
+                  style={{ border: "none" }}
+                  onClick={signIn}
+                  className="d-flex justify-content-center googleButton p-1 p-lg-2 mx-auto"
+                >
+                  <img
+                    className="rounded"
+                    style={{ background: "white" }}
+                    alt="google"
+                    src={google}
+                  ></img>
+                  <p className="m-0 p-2 align-self-center googleText">
+                    SIGN IN WITH GOOGLE
+                  </p>
+                </button>
+              )}
+              buttonText="Login"
+              onSuccess={onSuccess}
+              onFailure={onFailure}
+              cookiePolicy={"single_host_origin"}
+            />
           </div>
         </div>
       </div>

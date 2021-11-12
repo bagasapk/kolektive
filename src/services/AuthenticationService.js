@@ -11,8 +11,21 @@ const login = (data) => {
 const loginGoogle = (data) => {
   return http.post("/google/login", data);
 };
+
+const loginGoogleCek = () => {
+  return http.get("/oauth/tokens");
+};
+
+const detail = () => {
+  return http.post("/details");
+};
+
 const AuthenticationService = {
-  register,login,loginGoogle
+  register,
+  login,
+  loginGoogle,
+  loginGoogleCek,
+  detail,
 };
 
 export default AuthenticationService;

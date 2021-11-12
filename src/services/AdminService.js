@@ -1,14 +1,15 @@
 import http from "./http-common";
 
 const get = () => {
-  return http.get("/event");
+  return http.get("/admin/withdraw");
 };
-const getById = (id) => {
-  return http.get("/event/" + id);
+const put = (id) => {
+  return http.put("/admin/" + id);
 };
 
 const EventService = {
-  get,getById
+  get,
+  put,
 };
 
 export default EventService;

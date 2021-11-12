@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logoLogin from "../images/logoLogin.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
@@ -13,11 +13,11 @@ const Form = () => {
 
   const onSuccess = (res) => {
     // localStorage.setItem("token",'Bearer '+res.tokenId);
-    sessionStorage.setItem("token", res.tokenId);
     AuthenticationService.loginGoogle(res.profileObj)
       .then((response) => {
         console.log(response);
-        // window.location.href = "/";
+        localStorage.setItem("token", response.data.success.token);
+        window.location.href = "/";
       })
       .catch((e) => {
         console.log(e);
@@ -48,6 +48,7 @@ const Form = () => {
       .catch((e) => {
         console.log(e);
       });
+
   return (
     // <Navbar/>
     <div className="borderBox">
@@ -91,7 +92,7 @@ const Form = () => {
             <p className="createAcc">
               {" "}
               You are new?{" "}
-              <a href="/create" style={{ color: "tomato" }}>
+              <a href="/register" style={{ color: "tomato" }}>
                 {" "}
                 Create new{" "}
               </a>
@@ -124,24 +125,6 @@ const Form = () => {
             onFailure={onFailure}
             cookiePolicy={"single_host_origin"}
           />
-          <div className="d-flex justify-content-between facebookButton p-1 p-lg-2 mx-auto">
-            <img
-              className="p-1 rounded"
-              style={{ background: "white" }}
-              alt="google"
-              src={facebook}
-            ></img>
-            <p className="m-0 p-2 align-self-center googleText">
-              SIGN IN WITH FACEBOOK
-            </p>
-          </div>
-          <div className="loginRow2">
-            <div className="/">
-              {/* <a href="/register" className="signUp">
-              Sign Up
-            </a> */}
-            </div>
-          </div>
         </form>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/NavbarLP";
 import foto from "../images/image-icon.png";
 import Footer from "../components/Footer";
@@ -6,7 +6,13 @@ import { useForm } from "react-hook-form";
 import CampaignService from "../services/CampaignService";
 
 const FormCampaign = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [selectedImage, setSelectedImage] = useState();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
     let file = data.file[0];
@@ -21,6 +27,7 @@ const FormCampaign = () => {
     CampaignService.post(fd)
       .then((res) => {
         console.log(res.data);
+        window.location.href='/event'
       })
       .catch((e) => {
         console.log(e);
@@ -57,6 +64,7 @@ const FormCampaign = () => {
               type="file"
               hidden
             />
+          {errors.file && <span className='errorText text-center'>This field is required</span>}
           </label>
           <h2 className="text-uppercase campaignQuote">Keep Going Booster</h2>
         </div>
@@ -67,6 +75,7 @@ const FormCampaign = () => {
             id="title"
             type="text"
           ></input>
+          {errors.title && <span className='errorText'>This field is required</span>}
           <label htmlFor="category">Kategori</label>
           <select
             {...register("category", { required: true })}
@@ -81,24 +90,28 @@ const FormCampaign = () => {
             <option value="olahraga">Olahraga</option>
             <option value="pameran seni">Pameran Seni</option>
           </select>
+          {errors.category && <span className='errorText'>This field is required</span>}
           <label htmlFor="desc">Deskripsi/Caption</label>
           <textarea
             {...register("desc", { required: true })}
             id="desc"
             type="text"
           ></textarea>
+          {errors.desc && <span className='errorText'>This field is required</span>}
           <label htmlFor="date">Tanggal</label>
           <input
             {...register("date", { required: true })}
             id="date"
             type="datetime-local"
           />
+          {errors.date && <span className='errorText'>This field is required</span>}
           <label htmlFor="loc">Lokasi</label>
           <input
             {...register("loc", { required: true })}
             id="loc"
             type="text"
           ></input>
+          {errors.loc && <span className='errorText'>This field is required</span>}
           <button className="mx-auto my-4" type="submit">
             Done
           </button>
