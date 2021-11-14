@@ -1,5 +1,5 @@
 import React from "react";
-import { logoLoginz } from "../images/logoLogin.png";
+import logoLoginz from "../images/logoLogin.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
 import GoogleLogin, { useGoogleLogin } from "react-google-login";
