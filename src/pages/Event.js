@@ -3,7 +3,6 @@ import CarouselImg from "../components/CarouselImg";
 import NavbarLP from "../components/NavbarLP";
 import { CarouselData } from "../components/CarouselData";
 import Footer from "../components/Footer";
-import { AiOutlineSearch } from "react-icons/ai";
 import EventService from "../services/EventService";
 
 const Event = () => {

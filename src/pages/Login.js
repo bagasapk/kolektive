@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import logoLogin from "../images/logoLogin.png";
+import React from "react";
+import { logoLoginz } from "../images/logoLogin.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
-import GoogleLogin, { GoogleLogout, useGoogleLogin } from "react-google-login";
+import GoogleLogin, { useGoogleLogin } from "react-google-login";
 import google from "../images/google.png";
-import facebook from "../images/facebook.png";
 
 const Form = () => {
   const { register, handleSubmit } = useForm();
@@ -52,7 +51,7 @@ const Form = () => {
   return (
     // <Navbar/>
     <div className="borderBox">
-      <img alt="logo" className="logoLogin" src={logoLogin} />
+      <img alt="logo" className="logoLogin" src={logoLoginz} />
       <div className="loginContainer">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="loginRow">
