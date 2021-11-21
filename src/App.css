@@ -1623,14 +1623,18 @@ button[type="submit"] {
   .judul2 {
     margin: 0px 10px;
   }
-  .formRegister {
-    border: none;
+  .formRegister,
+  .sharePage .sharePageBox {
+    border: none !important;
   }
   .formRegister {
     border-radius: 0;
   }
   .slider {
     height: auto;
+  }
+  .salinShare{
+    margin-inline: 0 !important;
   }
 }
 
@@ -1753,6 +1757,13 @@ button[type="submit"] {
     display: inline;
     text-align: center;
   }
+  .sharePage .sharePageBox{
+    border: none !important;
+    margin-inline: 0 !important;
+  }
+  .salinShare{
+    margin: 0 !important;
+  }
 }
 
 /* iPads (landscape) ----------- */
@@ -1806,7 +1817,7 @@ button[type="submit"] {
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .box {
@@ -1945,4 +1956,52 @@ button[type="submit"] {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.sharePage h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #7939bd;
+}
+
+.sharePage .sharePageBox {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 7rem;
+  border: 3px solid #7939bd;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sharePageBox p {
+  color: #7939bd;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.salinShare {
+  margin-inline: 7rem;
+  justify-content: center;
+}
+
+.salinShare textarea {
+  width: 80%;
+  padding: 0;
+  border: 3px solid #7939bd;
+  background: transparent;
+  border-radius: 1rem 0px 0px 1rem;
+  text-align: center;
+}
+
+.salinShare button {
+  font-weight: 800;
+  align-self: center;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  background: #7939bd;
+  color: #fff500;
+  border: none;
 }

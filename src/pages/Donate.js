@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Popup from "../components/Popup";
 import FormTransaction from "./FormTransaction";
 import DonateService from "../services/DonateService";
+import ShareEvent from "./ShareEvent";
 
 const Donate = () => {
   let { id } = useParams();
@@ -16,6 +17,7 @@ const Donate = () => {
   const [info2, setInfo2] = useState("");
   const [infoWithdraw, setInfoWithdraw] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
   const [truncate, setTruncated] = useState(false);
 
   useEffect(() => {
@@ -60,6 +62,9 @@ const Donate = () => {
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
+  };
+  const togglePopup2 = () => {
+    setIsOpen2(!isOpen2);
   };
 
   const buttonWithdraw = () => {
@@ -134,7 +139,7 @@ const Donate = () => {
             </p>
           </div>
           <div className="d-flex justify-content-around mx-5 pb-5">
-            <button className="shareEvent rounded">
+            <button onClick={togglePopup2} className="shareEvent rounded">
               <i class="bi bi-share"></i>
               <p className="m-2 mx-4 progressDetails shareEventText">Bagikan</p>
             </button>
@@ -260,6 +265,16 @@ const Donate = () => {
           }
           handleClose={togglePopup}
         />
+      )}
+      {isOpen2 && (
+        <Popup
+        content={
+          <>
+            <ShareEvent/>
+          </>
+        }
+        handleClose={togglePopup2}
+      />
       )}
     </div>
   );
