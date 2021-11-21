@@ -15,19 +15,23 @@ const ShareEvent = () => {
     <div className="sharePage ">
       <h1 className="text-uppercase">Share</h1>
       <div className="sharePageBox">
-        <LineShareButton>
+        <LineShareButton url={window.location.href} title="Kolektive Share">
           <LineIcon size={50} />
           <p className="d-none d-lg-block">Line</p>
         </LineShareButton>
-        <FacebookShareButton>
+        <FacebookShareButton
+          url={window.location.href}
+          quote="Kolektive Share..."
+          hashtag="#Kolektive"
+        >
           <FacebookIcon size={50} />
           <p className="d-none d-lg-block">Facebook</p>
         </FacebookShareButton>
-        <WhatsappShareButton>
+        <WhatsappShareButton url={window.location.href} title="Kolektive Share">
           <WhatsappIcon size={50} />
           <p className="d-none d-lg-block">Whatsapp</p>
         </WhatsappShareButton>
-        <TumblrShareButton>
+        <TumblrShareButton url={window.location.href}>
           <TumblrIcon size={50} />
           <p className="d-none d-lg-block">Tumblr</p>
         </TumblrShareButton>
