@@ -23,7 +23,7 @@ const CarouselImg = ({ slides }) => {
   }
 
   return (
-    <section className="slider">
+    <section className="slider mx-5 pt-5">
       <IoIosArrowDropleftCircle className="d-none d-md-block left-arrow" onClick={prevSlide}/>
 
       <IoIosArrowDroprightCircle className="d-none d-md-block right-arrow" onClick={nextSlide}/>

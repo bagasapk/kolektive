@@ -5,6 +5,8 @@ body {
 }
 .App {
   text-align: center;
+  /* background: #7939BD;
+  z-index: -2; */
 }
 body {
   margin: 0;
@@ -152,10 +154,11 @@ button:hover {
   position: relative;
   /* width: 672px; */
   min-height: 753px;
-  background-color: #ef5089;
+  background-color: #7939bd;
   display: flex;
   text-align: center;
   justify-content: center;
+  border-radius: 59px;
 }
 
 .loginContainer {
@@ -174,10 +177,9 @@ button:hover {
   font-family: Poppins;
   font-style: normal;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 3rem !important;
   line-height: 96px;
   text-align: center;
-  color: #000000;
   margin: 5px 0 0 0;
 }
 .txtLogin {
@@ -282,23 +284,25 @@ input[type="number"] {
 
 /* Carousel */
 .slider {
+  border: 11px solid #fff500;
+  border-radius: 49px;
+  height: 95vh;
   position: relative;
-  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  z-index: 0;
 }
 .eventImg {
-  width: 100%;
-  height: 80%;
-  border-radius: 5px;
+  width: 80vw;
+  height: auto;
+  border-radius: 2rem;
   display: flex;
   text-align: center;
   justify-content: center;
-  margin-top: 190px;
+  /* margin-top: 190px; */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-  border-radius: 0px 0px 32px 32px;
+  /* border-radius: 0px 0px 32px 32px; */
 }
 .right-arrow {
   position: absolute;
@@ -325,7 +329,11 @@ input[type="number"] {
 
 /* Event Page*/
 .searchEvt {
-  position: relative;
+  position: absolute;
+  top: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -342,9 +350,10 @@ input[type="number"] {
   float: left;
 }
 .searchBoxEvt p {
-  float: left;
+  /* float: left; */
   flex: 50%;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +384,8 @@ input[type="number"] {
   text-align: center;
   width: 80%;
   /* height: 170px; */
-  background-color: whitesmoke;
+  background-color: #c73cb1;
+  border: 5px solid #fff500;
   border-radius: 34px;
   box-sizing: border-box;
 }
@@ -523,20 +533,29 @@ input[type="number"] {
 /* Register */
 
 .sideRegister {
-  background: url("./images/image\ 1.png") repeat !important;
+  /* background: url("./images/image\ 1.png") repeat !important; */
+  background: #7939bd;
   min-height: 100vh;
 }
 
 .sideTitle {
-  color: white;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff500;
+  text-shadow: 4px 4px #34b7f0;
   font-weight: 800;
   font-size: 2rem;
   text-align: center;
 }
 
+.sideText {
+  color: #fff500;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .formRegister {
-  background: #f2f1f1;
+  background: #ede0fb;
+  border-left: 16px solid #c73cb1;
+  border-radius: 60px 0px 0px 60px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 30px 0px 0px 30px;
   position: absolute;
@@ -545,11 +564,15 @@ input[type="number"] {
   min-height: 100vh;
 }
 
-.titleRegister {
+.titleRegister,
+.textLogin {
   font-weight: 800;
   font-size: 2rem;
-  color: #ef5089;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff500;
+
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .borderRegister {
@@ -714,10 +737,10 @@ button[type="submit"] {
   margin-left: 40px;
 }
 .NavbarLP {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   /* width: 850px; */
-  height: 110px;
+  height: 80px;
   left: -5px;
   top: 63px;
   display: flex;
@@ -737,8 +760,8 @@ button[type="submit"] {
 }
 .NavbarLP .rightSide .links a {
   float: right;
-  padding: 20px 50px 50px 0px;
-  margin-top: 10px;
+  padding: 20px 40px 20px 0px;
+  /* margin-top: 10px; */
   justify-content: flex-end;
   text-decoration: none;
   color: #ffffff;
@@ -824,7 +847,7 @@ button[type="submit"] {
 }
 
 .button1 {
-  position: absolute;
+  /* position: absolute; */
   color: #000;
   width: 206px;
   height: 60px;
@@ -836,7 +859,7 @@ button[type="submit"] {
   border-radius: 64px;
 }
 .button2 {
-  position: absolute;
+  /* position: absolute; */
   color: #fff;
   margin: 10px 20px;
   width: 206px;
@@ -849,7 +872,7 @@ button[type="submit"] {
 .btnRegis {
   /* position: absolute; */
   width: 206px;
-  height: 100px;
+  height: 80px;
   left: 1200px;
   background: #791682;
   border: 3px solid #fff500;
@@ -861,7 +884,7 @@ button[type="submit"] {
 .btnLgn {
   /* position: absolute; */
   width: 206px;
-  height: 100px;
+  height: 80px;
   left: 1450px;
 
   background: #fff500;
@@ -889,7 +912,7 @@ button[type="submit"] {
 }
 .layerPict {
   flex: 50%;
-  height: 515px;
+  /* height: 515px; */
 }
 .layerTxt {
   flex: 50%;
@@ -982,7 +1005,7 @@ button[type="submit"] {
 }
 .layer1LP {
   position: relative;
-  top: 550px;
+  top: 275px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -996,7 +1019,7 @@ button[type="submit"] {
   border-radius: 44px;
   box-sizing: border-box;
   align-self: center;
-  margin-bottom: 600px;
+  margin-bottom: 220px;
 }
 .layer1Txt {
   display: flex;
@@ -1023,7 +1046,7 @@ button[type="submit"] {
   flex: 50%;
   height: 505px;
   margin-right: 20px;
-  margin-top: 200px;
+  /* margin-top: 200px; */
 
   border: 7px solid #ffffff;
   box-sizing: border-box;
@@ -1031,8 +1054,8 @@ button[type="submit"] {
   border-radius: 44px;
 }
 .layer1Txt2 {
-  position: absolute;
-  width: 560px;
+  /* position: absolute; */
+  /* width: 560px; */
   height: 108px;
   left: 130px;
   top: 560px;
@@ -1048,7 +1071,7 @@ button[type="submit"] {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .layer1LP button {
-  position: absolute;
+  /* position: absolute; */
   width: 257.96px;
   height: 72.81px;
   left: 290px;
@@ -1074,7 +1097,7 @@ button[type="submit"] {
   display: flex;
   justify-content: center;
   text-align: center;
-  width: 80%;
+  /* width: 80%; */
   height: 501px;
   background: #c73cb1;
   border: 7px solid #fff500;
@@ -1201,19 +1224,26 @@ button[type="submit"] {
   margin: 20px;
   z-index: 1;
   right: 40%;
-  width: 24%;
-  height: 795px;
+  height: 625px;
   box-sizing: border-box;
-  border-radius: 99px;
+  border-radius: 75px;
   border: 24px solid #454545;
   background-color: #eb6a98;
-  /* background: url("./images//music1.png"); */
+  /* background: url(./images//music1.png);*/
+}
+
+.judulHP {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  justify-content: space-around;
 }
 
 .judulHP p {
   display: flex;
   text-align: center;
-  padding-top: 80px;
+  margin: 0;
+  /* padding-top: 80px; */
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
@@ -1263,7 +1293,7 @@ button[type="submit"] {
   align-items: center;
   /* left: 21px;
   top: 118px; */
-  margin-top: 70px;
+  /* margin-top: 70px; */
   /* Colors / Red */
 
   background: #f95a2c;
@@ -1382,13 +1412,11 @@ button[type="submit"] {
   margin-top: 40px;
   margin-bottom: 100px;
   width: 60%;
-  height: 70vh;
+  /* height: 70vh; */
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: start;
   box-sizing: border-box;
-  border-radius: 50px;
-  border: 20px solid #fff500;
   background: radial-gradient(50% 50% at 50% 50%, #7939bd 35.94%, #15d9f3 100%);
   border: 20px solid #fff500;
   border-radius: 72px;
@@ -1396,13 +1424,14 @@ button[type="submit"] {
 .textLayer2 {
   display: flex;
   justify-content: flex-start;
-  text-align: center;
+  text-align: start;
+  margin: 50px;
   /* flex: content; */
 }
 .textLayer2 p {
   flex: 50%;
   display: flex;
-  margin: 50px;
+  /* margin: 50px; */
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -1416,38 +1445,30 @@ button[type="submit"] {
   display: flex;
   flex: 50%;
   justify-content: center;
-  align-items: center;
+  align-self: center;
   width: 100%;
   height: 50vh;
 }
 .textLayer2 h3 {
-  position: absolute;
-  width: 50%;
-  margin: 400px 20px;
+  /* position: absolute; */
+  /* width: 50%; */
+  /* margin: 400px 20px; */
   display: flex;
   font-family: Poppins;
   font-style: normal;
   font-weight: 800;
   font-size: 48px;
   line-height: 72px;
-  /* identical to box height */
-
-  text-align: center;
-
   color: #fff500;
 }
 .textLayer2 h5 {
-  position: absolute;
-  margin: 470px 20px;
+  /* position: absolute; */
+  /* margin: 470px 20px; */
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
-  /* identical to box height */
-
-  text-align: center;
-
   color: #ffffff;
 }
 /* LANDING PAGE */
@@ -1544,8 +1565,72 @@ button[type="submit"] {
     padding: 0 3.5rem 1.5rem 0;
   }
   .btnRegis,
-  .btnLgn {
+  .btnLgn,
+  .layer1Txt,
+  .imageHP,
+  .judul2,
+  .layer2LP,
+  .layer1LP {
     width: auto;
+  }
+  .typed-words,
+  .text-center .layer1Txt,
+  .borderBoxLP h1,
+  .judul2 p {
+    font-size: 2.5rem;
+    line-height: normal;
+  }
+  .layerTxt,
+  .layer1Txt2,
+  .pictKolega h4,
+  .textLayer2 p,
+  .textLayer2 h3,
+  .textLayer2 h5 {
+    font-size: 1.5rem;
+    line-height: normal;
+    margin-right: 0;
+    text-align: start;
+    height: auto;
+    margin-top: 1rem;
+    margin-inline: 1rem;
+  }
+  .layer1Txt2,
+  .pictKolega h4 {
+    text-align: center;
+  }
+  .layer1LP {
+    left: auto;
+  }
+  .boxKolega,
+  .layer2LP img {
+    height: auto;
+  }
+  .pictKolega {
+    margin: 20px 20px 190px;
+  }
+  .pictKolega h4 {
+    justify-content: center;
+    margin-top: 220px;
+  }
+  .pictKolega p {
+    margin-top: 315px;
+  }
+  .boxHP {
+    margin: auto;
+  }
+  .judulHP p,
+  .judul2 p,
+  .judul2 {
+    margin: 0px 10px;
+  }
+  .formRegister {
+    border: none;
+  }
+  .formRegister {
+    border-radius: 0;
+  }
+  .slider {
+    height: auto;
   }
 }
 
@@ -1553,9 +1638,6 @@ button[type="submit"] {
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
-  .slider {
-    height: auto;
-  }
   .searchEvt {
     height: auto;
     margin-top: 2rem;
@@ -1626,11 +1708,50 @@ button[type="submit"] {
   .close-icon {
     right: 67% !important;
   }
-  .NavbarLP {
+  .NavbarLP,
+  .layer1Txt,
+  .judul2 {
     width: auto;
   }
   .NavbarLP .rightSide .links a {
     font-size: 1.25rem;
+  }
+  .layerTxt,
+  .layer1Txt2,
+  .pictKolega h4,
+  .textLayer2 p,
+  .textLayer2 h3,
+  .textLayer2 h5 {
+    font-size: 1.5rem;
+    line-height: normal;
+    margin-right: 0;
+    text-align: start;
+    height: auto;
+    margin-top: 1rem;
+    margin-inline: 1rem;
+  }
+  .layerLP,
+  .boxKolega,
+  .layer1Txt {
+    height: auto;
+  }
+  .text-center .layer1Txt,
+  .judul2 p {
+    font-size: 2.5rem;
+    line-height: normal;
+  }
+  .layer1LP {
+    align-items: center;
+  }
+  .pictKolega {
+    border: none;
+    background: none;
+    margin: 100px 20px 200px;
+  }
+  .pictKolega h4 {
+    margin-top: 300px;
+    display: inline;
+    text-align: center;
   }
 }
 
@@ -1657,6 +1778,10 @@ button[type="submit"] {
 @media only screen and (min-width: 1224px) {
   .NavbarLP {
     width: 50vw;
+  }
+  .layer2LP img {
+    height: auto;
+    max-width: 50%;
   }
 }
 
@@ -1691,7 +1816,7 @@ button[type="submit"] {
   height: auto;
   max-height: 80vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
+  background: #fff500;
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #999;
@@ -1734,7 +1859,8 @@ button[type="submit"] {
   color: white;
 }
 
-.formTransaction {
+.formTransaction,
+.eventBg {
   background: #7939bd;
 }
 .formTransaction h1 {
@@ -1794,4 +1920,29 @@ button[type="submit"] {
   font-size: 1.5rem;
   font-weight: 400;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.cardBox {
+  background: #c73cb1;
+  border: 10px solid #fff500;
+  border-radius: 43px;
+  width: 80%;
+}
+
+.card {
+  border-radius: 26px !important;
+}
+
+.nullState {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.truncated {
+  display: -webkit-box;
+  max-width: inherit;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

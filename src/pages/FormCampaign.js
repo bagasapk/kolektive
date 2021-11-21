@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/NavbarLP";
 import foto from "../images/image-icon.png";
 import Footer from "../components/Footer";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import CampaignService from "../services/CampaignService";
 
 const FormCampaign = () => {
@@ -11,9 +11,12 @@ const FormCampaign = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [selectedImage, setSelectedImage] = useState();
-  const [loading, setLoading] = useState(false);
+  const [uploadPhoto, setUploadedPhoto] = useState(null);
 
+  const uploadedPhoto = (event) => {
+    setUploadedPhoto(URL.createObjectURL(event));
+    console.log(event);
+  };
   const onSubmit = (data) => {
     let file = data.file[0];
     let fd = new FormData();
@@ -27,7 +30,7 @@ const FormCampaign = () => {
     CampaignService.post(fd)
       .then((res) => {
         console.log(res.data);
-        window.location.href='/event'
+        window.location.href = "/event";
       })
       .catch((e) => {
         console.log(e);
@@ -50,7 +53,11 @@ const FormCampaign = () => {
             className=" text-start my-5 p-2 campaignFoto row rounded"
           >
             <p className="m-0 pb-5 campaignFotoTitle">FOTO</p>
-            <img className="img-fluid p-4" alt="foto" src={foto} />
+            <img
+              className="img-fluid p-4"
+              alt="foto"
+              src={uploadPhoto ? uploadPhoto : foto}
+            />
             <p
               style={{ color: "white", fontSize: "0.75rem" }}
               className="text-center py-2"
@@ -59,12 +66,20 @@ const FormCampaign = () => {
             </p>
             <input
               accept="image/png, image/gif, image/jpeg"
-              {...register("file", { required: true })}
+              {...register("file", {
+                required: true,
+                onChange: (e) => uploadedPhoto(e.target.files[0]),
+              })}
               id="file"
               type="file"
               hidden
             />
-          {errors.file && <span className='errorText text-center'>This field is required</span>}
+
+            {errors.file && (
+              <span className="errorText text-center">
+                This field is required
+              </span>
+            )}
           </label>
           <h2 className="text-uppercase campaignQuote">Keep Going Booster</h2>
         </div>
@@ -75,7 +90,9 @@ const FormCampaign = () => {
             id="title"
             type="text"
           ></input>
-          {errors.title && <span className='errorText'>This field is required</span>}
+          {errors.title && (
+            <span className="errorText">This field is required</span>
+          )}
           <label htmlFor="category">Kategori</label>
           <select
             {...register("category", { required: true })}
@@ -90,28 +107,42 @@ const FormCampaign = () => {
             <option value="olahraga">Olahraga</option>
             <option value="pameran seni">Pameran Seni</option>
           </select>
-          {errors.category && <span className='errorText'>This field is required</span>}
+          {errors.category && (
+            <span className="errorText">This field is required</span>
+          )}
           <label htmlFor="desc">Deskripsi/Caption</label>
           <textarea
-            {...register("desc", { required: true })}
+            {...register("desc", {
+              required: "This field is required",
+              maxLength: {
+                value: 3000,
+                message: "Max length of this description is 3000 characters",
+              },
+            })}
             id="desc"
             type="text"
           ></textarea>
-          {errors.desc && <span className='errorText'>This field is required</span>}
+          {errors.desc && (
+            <span className="errorText">{errors.desc.message}</span>
+          )}
           <label htmlFor="date">Tanggal</label>
           <input
             {...register("date", { required: true })}
             id="date"
             type="datetime-local"
           />
-          {errors.date && <span className='errorText'>This field is required</span>}
+          {errors.date && (
+            <span className="errorText">This field is required</span>
+          )}
           <label htmlFor="loc">Lokasi</label>
           <input
             {...register("loc", { required: true })}
             id="loc"
             type="text"
           ></input>
-          {errors.loc && <span className='errorText'>This field is required</span>}
+          {errors.loc && (
+            <span className="errorText">This field is required</span>
+          )}
           <button className="mx-auto my-4" type="submit">
             Done
           </button>

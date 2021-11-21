@@ -33,7 +33,7 @@ const Ladingpage = () => {
     <div className="body">
       <NavbarLP />
       <div className="borderBoxLP">
-        <div className="heroLP mx-auto">
+        <div className="heroLP mx-auto flex-column">
           <div className="boxHeading">
             <p className="heading">
               <span
@@ -48,7 +48,7 @@ const Ladingpage = () => {
               </span>
             </p>
           </div>
-          <div style={{ position: "absolute" }}>
+          <div className="col-10 d-flex flex-wrap justify-content-around">
             <button
               onClick={() => (window.location.href = "/event")}
               className="button1"
@@ -63,9 +63,9 @@ const Ladingpage = () => {
             </button>
           </div>
         </div>
-        <div className="layerLP mx-auto">
+        <div className="layerLP mx-auto flex-wrap flex-md-nowrap">
           <div className="layerPict">
-            <img className="pict" src={layer2} />
+            <img className="pict img-fluid" src={layer2} />
           </div>
           <div className="layerTxt">
             Kolektive adalah sebuah platform event organizer dan crowdfunding
@@ -73,7 +73,7 @@ const Ladingpage = () => {
             kalian harapkan.
           </div>
         </div>
-        <div className="linePelangi mx-auto">
+        <div className="linePelangi mx-auto d-none d-lg-block">
           <div className="line4"></div>
           <div className="line5"></div>
           <div className="line6"></div>
@@ -81,15 +81,23 @@ const Ladingpage = () => {
           <div className="line2"></div>
           <div className="line3"></div>
         </div>
-        <div className="layer1LP mx -auto">
-          <div className="layer1Txt">
-            Ambil peran untuk memulai langkah kebaikan.
+        <div className="layer1LP">
+          <div className="text-center mx-4">
+            <div className="layer1Txt">
+              Ambil peran untuk memulai langkah kebaikan.
+            </div>
+            <div className="layer1Txt2">
+              Ayo wujudkan impian pemuda kreatif di Indonesia.
+            </div>
+            <button
+              onClick={() => (window.location.href = "/event")}
+              className="mt-2"
+            >
+              {" "}
+              Learn More{" "}
+            </button>
           </div>
-          <div className="layer1Txt2">
-            Ayo wujudkan impian pemuda kreatif di Indonesia.
-          </div>
-          <button> Learn More </button>
-          <div className="layer1Pict">
+          <div className="layer1Pict d-none d-md-block">
             {/* <img src={layer3}/> */}
             <div
               id="carouselExampleIndicators"
@@ -136,21 +144,21 @@ const Ladingpage = () => {
             </div>
           </div>
         </div>
-        <div className="boxKolega mx-auto">
+        <div className="boxKolega mx-5 flex-wrap flex-lg-nowrap">
           <div className="pictKolega">
             <img src={kolega} />
             <p>{info.booster}</p>
-            <h4>BOOSTER</h4>
+            <h4 className="col-2 col-xl-3">BOOSTER YANG MEMBANTU</h4>
           </div>
           <div className="pictKolega">
             <img src={booster} />
             <p>{info.total}</p>
-            <h4>DANA YANG TERKUMPUL</h4>
+            <h4 className="col-2 col-xl-3">DANA YANG TERKUMPUL</h4>
           </div>
           <div className="pictKolega">
             <img src={kolega} />
             <p>{info.kolega}</p>
-            <h4>KOLEGA YANG BERGABUNG</h4>
+            <h4 className="col-2 col-xl-3">KOLEGA YANG BERGABUNG</h4>
           </div>
         </div>
 
@@ -160,7 +168,7 @@ const Ladingpage = () => {
           <div className="line8"></div>
           <div className="line9"></div>
         </div>
-        <div className="boxHP d-flex">
+        <div className="boxHP m-md-0 d-flex flex-wrap">
           <div className="screenHP">
             <div className="cameraHP mx-auto">
               <div className="speaker"></div>
@@ -170,9 +178,9 @@ const Ladingpage = () => {
               <a
                 href="#"
                 style={{
-                  fontSize: "30px",
-                  float: "left",
-                  margin: "70px 25px",
+                  fontSize: "20px",
+                  // float: "left",
+                  // margin: "70px 25px",
                   color: "#000",
                 }}
               >
@@ -180,12 +188,12 @@ const Ladingpage = () => {
               </a>
               <p mx-auto>Kalian Tau Ga ?</p>
             </div>
-            <div className="imageHP mx-auto">
-              <img mx-auto src={music5} />
+            <div className="imageHP mx-4">
+              <img className="img-fluid" src={music5} />
             </div>
             <div className="topikHP">
               <p mx-auto>ThanksInfopedia</p>
-              <a href="#">
+              <a className="d-none" href="#">
                 {" "}
                 <FiHeart />{" "}
               </a>
@@ -202,9 +210,9 @@ const Ladingpage = () => {
               <a
                 href="#"
                 style={{
-                  fontSize: "30px",
-                  float: "left",
-                  margin: "70px 25px",
+                  fontSize: "20px",
+                  // float: "left",
+                  // margin: "70px 25px",
                   color: "#000",
                 }}
               >
@@ -212,12 +220,12 @@ const Ladingpage = () => {
               </a>
               <p mx-auto>Kalian Tau Ga ?</p>
             </div>
-            <div className="imageHP mx-auto">
-              <img mx-auto src={music4} />
+            <div className="imageHP mx-4">
+              <img className="img-fluid" src={music4} />
             </div>
             <div className="topikHP">
               <p mx-auto>ThanksInfopedia</p>
-              <a href="#">
+              <a className="d-none" href="#">
                 {" "}
                 <FiHeart />{" "}
               </a>
@@ -234,9 +242,9 @@ const Ladingpage = () => {
               <a
                 href="#"
                 style={{
-                  fontSize: "30px",
-                  float: "left",
-                  margin: "70px 25px",
+                  fontSize: "20px",
+                  // float: "left",
+                  // margin: "70px 25px",
                   color: "#000",
                 }}
               >
@@ -244,12 +252,12 @@ const Ladingpage = () => {
               </a>
               <p mx-auto>Kalian Tau Ga ?</p>
             </div>
-            <div className="imageHP mx-auto">
-              <img mx-auto src={music6} />
+            <div className="imageHP mx-4">
+              <img className="img-fluid" src={music6} />
             </div>
             <div className="topikHP">
               <p mx-auto>ThanksInfopedia</p>
-              <a href="#">
+              <a className="d-none" href="#">
                 {" "}
                 <FiHeart />{" "}
               </a>
@@ -257,15 +265,15 @@ const Ladingpage = () => {
             </div>
           </div>
         </div>
-        <div className="boxJudul1 mx-auto"></div>
+        <div className="d-none d-md-block boxJudul1 mx-auto"></div>
         <div className="judul2 mx-auto">
           <p> GIMANA SIH KOLEKTIVE?</p>
         </div>
-        <div className="boxJudul2 mx-auto"></div>
+        <div className="d-none d-md-block boxJudul2 mx-auto"></div>
 
-        <div className="layer2LP mx-auto">
-          <img mx-auto src={fotodiza} />
-          <div className="textLayer2 mx-auto">
+        <div className="layer2LP mx-auto flex-wrap flex-xl-nowrap">
+          <img className="img-fluid mx-5" src={fotodiza} />
+          <div className="textLayer2 mx-auto flex-column">
             <p>
               “Kolektive ngebantu banget sih kalo kata gue, karna menurut gue,
               ini bukan cuma platform penggalangan doang. gue disini bisa ”

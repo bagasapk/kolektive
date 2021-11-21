@@ -16,6 +16,7 @@ const Donate = () => {
   const [info2, setInfo2] = useState("");
   const [infoWithdraw, setInfoWithdraw] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [truncate, setTruncated] = useState(false);
 
   useEffect(() => {
     getInfo();
@@ -62,7 +63,7 @@ const Donate = () => {
   };
 
   const buttonWithdraw = () => {
-    if (info2.id === info.user_id && infoWithdraw.request_status != 1) {
+    if (info2.id === info.user_id && infoWithdraw === null) {
       return (
         <button
           onClick={() => postWithdraw(info.id)}
@@ -71,7 +72,7 @@ const Donate = () => {
           Request Withdraw
         </button>
       );
-    }else{
+    } else {
       return null;
     }
   };
@@ -85,6 +86,11 @@ const Donate = () => {
       .catch((e) => {
         console.log(e);
       });
+  };
+
+  const truncatedHandler = () => {
+    setTruncated(truncate ? false : true);
+    console.log(truncate)
   };
 
   return (
@@ -148,7 +154,7 @@ const Donate = () => {
             <div className="d-flex justify-content-between m-4 flex-wrap">
               <div className=" donateEventDesc col-md-8 text-start">
                 <h4>Deskripsi Event</h4>
-                <p>{info.desc}</p>
+                <p className={`${truncate ? `` : `truncated`}`}>{info.desc}</p>
               </div>
               <div className="donateEventInfo col-md-4 text-start p-2">
                 <div>
@@ -183,7 +189,11 @@ const Donate = () => {
                 </div>
               </div>
             </div>
-            <button className="donateLearnMore mb-4">
+            <button
+              type="button"
+              onClick={() => truncatedHandler()}
+              className="donateLearnMore mb-4"
+            >
               <span>Learn More</span>
             </button>
           </div>

@@ -6,7 +6,12 @@ import GoogleLogin, { useGoogleLogin } from "react-google-login";
 import google from "../images/google.png";
 
 const Form = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm();
   const clientId =
     "1007961814003-4p65g13vnqa0q2q0p8buaf4civv37eqi.apps.googleusercontent.com";
 
@@ -45,7 +50,7 @@ const Form = () => {
         window.location.href = "/";
       })
       .catch((e) => {
-        console.log(e);
+        setError("apiError", { message: e });
       });
 
   return (
@@ -62,19 +67,29 @@ const Form = () => {
                 robot.
               </h6>
               <input
-                type="text"
                 {...register("email", { required: true })}
+                type="text"
                 placeholder="Email"
-                required
               ></input>
+              {errors.email && (
+                <p className="errorText text-center m-0">
+                  This field is required
+                </p>
+              )}
             </div>
             <div>
               <input
                 type="password"
-                {...register("password", { required: true })}
+                {...register("password", {
+                  required: "This field is Required",
+                })}
                 placeholder="Password"
-                required
               ></input>
+              {errors.password && (
+                <p className="errorText text-center m-0">
+                  This field is required
+                </p>
+              )}
             </div>
           </div>
           <div className="loginRow2">
@@ -88,6 +103,11 @@ const Form = () => {
                 SIGN IN
               </button>
             </div>
+            {errors.apiError && (
+                <p className="errorText text-center m-0">
+                  Email atau Password salah
+                </p>
+              )}
             <p className="createAcc">
               {" "}
               You are new?{" "}
@@ -100,6 +120,7 @@ const Form = () => {
             Forgot Password?
           </a> */}
           </div>
+          <p className="titleRegister">OR</p>
           <GoogleLogin
             clientId={clientId}
             render={() => (

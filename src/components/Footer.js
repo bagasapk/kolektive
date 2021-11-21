@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="containerFooter">
       <div className="wrapperFooter">
-        <div className="rowFooter">
+        <div className="rowFooter flex-wrap">
           <div className="columnFooter col-3">
             <div className="titleFooter">TENTANG KOLEKTIVE</div>
             <p className="linkFooter text-uppercase  text-start">

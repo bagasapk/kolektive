@@ -39,7 +39,7 @@ const Event = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   return (
-    <div>
+    <div className="eventBg">
       <NavbarLP />
       <CarouselImg slides={CarouselData} />
       <div className="searchEvt mx-auto flex-wrap flex-lg-nowrap">
@@ -64,46 +64,50 @@ const Event = () => {
         BIKIN CAMPAIGN{" "}
       </button>
       <div className="upcomingEvents mx-auto">
-        <div className="txtUpcoming flex-wrap flex-lg-nowrap mb-5 mx-xl-3 justify-content-xl-around">
+        <div className="txtUpcoming titleRegister flex-wrap flex-lg-nowrap mb-3 mx-xl-3 justify-content-xl-around">
           <p>UPCOMING EVENTS</p>
         </div>
       </div>
-
-      <div class="card-group justify-content-center">
-        {info &&
-          info
-            .slice(0, indexOperator())
-            .filter((item) => {
-              if (searchTerm === "") {
-                return item;
-              } else if (
-                item.title.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return item;
-              }
-            })
-            .map((item) => (
-              <button
-                onClick={() => (window.location.href = "/event/" + item.id)}
-                key={item.id}
-                className="card col-3"
-                style={{ margin: "20px 50px", alignItems: "center" }}
-              >
-                <img
-                  // style={{ maxWidth: "100%" }}
-                  class="card-img-top"
-                  src={baseURL + item.path}
-                  alt={item.id}
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{item.title}</h5>
-                  <p class="card-text">{item.desc}</p>
-                  <p class="card-text">
-                    <small class="text-muted">{item.date}</small>
-                  </p>
-                </div>
-              </button>
-            ))}
+      <div className="cardBox mx-auto">
+        <div class="card-group justify-content-center">
+          {info.length > 0 ? (
+            info
+              .slice(0, indexOperator())
+              .filter((item) => {
+                if (searchTerm === "") {
+                  return item;
+                } else if (
+                  item.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return item;
+                }
+              })
+              .map((item) => (
+                <button
+                  onClick={() => (window.location.href = "/event/" + item.id)}
+                  key={item.id}
+                  className="card col-3"
+                  style={{ margin: "20px 50px", alignItems: "center" }}
+                >
+                  <img
+                    // style={{ maxWidth: "100%" }}
+                    class="card-img-top"
+                    src={baseURL + item.path}
+                    alt={item.id}
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{item.title}</h5>
+                    <p class="card-text truncated">{item.desc}</p>
+                    <p class="card-text">
+                      <small class="text-muted">{item.date}</small>
+                    </p>
+                  </div>
+                </button>
+              ))
+          ) : (
+            <p className="nullState">No Upcoming Events</p>
+          )}
+        </div>
       </div>
       <button
         onClick={() => setOperatorClicked(operatorClicked++)}

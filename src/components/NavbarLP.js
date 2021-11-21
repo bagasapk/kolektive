@@ -18,18 +18,20 @@ export default function Navbar() {
   };
 
   const logoutAccount = () => {
-    localStorage.removeItem("token");;
+    localStorage.removeItem("token");
     window.location.href = "/";
   };
-
 
   const clientId =
     "1007961814003-4p65g13vnqa0q2q0p8buaf4civv37eqi.apps.googleusercontent.com";
 
   const isLoggedIn = localStorage.getItem("token");
   return (
-    <div style={toggleOn ? { height: "auto" } : {}} className="NavbarLP">
-      <div className="col-xl-12 navbarBorder d-flex justify-content-around">
+    <div
+      style={toggleOn ? { height: "auto", display: "inline" } : {}}
+      className="NavbarLP"
+    >
+      <div className="col-xl-12 col-md-7 col-lg-7 navbarBorder d-flex justify-content-around">
         <div className="leftSide">
           <div className="links">
             <a href="/">
@@ -47,7 +49,7 @@ export default function Navbar() {
             >
               <IoIosPlay
                 style={{ fontSize: "3rem", color: "white" }}
-                className={toggleOn ? "d-none" : "d-block"}
+                className={toggleOn ? "d-none" : "d-block "}
               />
               <IoIosPause
                 style={{ fontSize: "3rem", color: "white" }}
@@ -73,13 +75,13 @@ export default function Navbar() {
           >
             <a href="/#"> HOME </a>
             <a href="/event">EVENT</a>
-            <a href="/transactions">TRANSACTION</a>
+            {isLoggedIn ? <a href="/transactions">TRANSACTION</a> : null}
           </div>
         </div>
       </div>
       {isLoggedIn ? (
         <div
-          className={`d-md-block col-3 flex-wrap col-lg-12 d-flex justify-content-lg-center ${
+          className={`d-md-block flex-wrap col-lg-12 d-md-flex justify-content-lg-start justify-content-xl-center ${
             toggleOn ? "d-block" : "d-none"
           }`}
         >
@@ -96,7 +98,7 @@ export default function Navbar() {
         </div>
       ) : (
         <div
-          className={`d-md-block col-3 flex-wrap col-lg-12 d-flex justify-content-lg-center ${
+          className={`d-md-block flex-wrap col-lg-12 d-md-flex justify-content-lg-start justify-content-xl-center ${
             toggleOn ? "d-block" : "d-none"
           }`}
         >

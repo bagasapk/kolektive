@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import logoKolektive from "../logo/Logo.png";
 import google from "../images/google.png";
-import facebook from "../images/facebook.png";
 import peep2 from "../images/big-image-2.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
 import GoogleLogin, { useGoogleLogin } from "react-google-login";
 
 const Register = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setError, formState, watch } = useForm();
+  const { errors } = formState;
+  const password = useRef({});
+  password.current = watch("Password", "");
+  // password.current = watch;
 
   const clientId =
     "1007961814003-4p65g13vnqa0q2q0p8buaf4civv37eqi.apps.googleusercontent.com";
@@ -16,16 +19,16 @@ const Register = () => {
   const onSuccess = (res) => {
     // localStorage.setItem("token",'Bearer '+res.tokenId);
     AuthenticationService.loginGoogle(res.profileObj)
-    .then((response) => {
-      console.log(response);
-      localStorage.setItem("token", response.data.success.token);
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("token", response.data.success.token);
         window.location.href = "/";
       })
       .catch((e) => {
         console.log(e);
       });
   };
-  
+
   const onFailure = (res) => {
     console.log("Login Failed: res:", res);
   };
@@ -46,23 +49,29 @@ const Register = () => {
         window.location.href = "/";
       })
       .catch((e) => {
-        console.log(e);
+        setError("apiError", { message: e });
       });
 
   return (
     <div className="d-md-flex register">
       <div className="d-none col-md-6 d-md-block sideRegister p-4 text-start">
-        <img
-          className="img-fluid w-50"
-          alt="kolektive"
-          src={logoKolektive}
-        ></img>
-        <p className="col-xl-8 sideTitle pt-5 text-md-start px-md-3 px-lg-5 text-xl-center">
+        <a href="/">
+          <img
+            className="logoKolektiveLP"
+            alt="kolektive"
+            src={logoKolektive}
+          ></img>
+        </a>
+        <p className="col-xl-8 sideTitle pt-5 text-md-start mt-5 px-md-3 px-lg-5 text-xl-center">
           Dari Patungan, Raih Kenyataan
+        </p>
+        <p className="text-center sideText col-md-11 col-xl-8 pt-5 text-md-start p-md-3 px-lg-5 text-xl-center">
+          Daftarkan diri anda dan anda bisa memiliki kesempatan untuk menjadI
+          kolega dikolektive.com
         </p>
       </div>
       <div className="col-md-7 col-xl-8 formRegister p-4 p-md-0 p-lg-5 py-md-5 text-start">
-        <h1 className="p-2 titleRegister text-center">Create Account</h1>
+        <h1 className="p-2 titleRegister text-start">Create Account</h1>
         <div className="px-3 px-md-5 mx-md-5 mx-lg-0">
           <div className="borderRegister"></div>
           <form
@@ -74,28 +83,68 @@ const Register = () => {
               type="text"
               placeholder="First Name"
             ></input>
+            {errors.firstName && (
+              <span className="errorText text-start">
+                This field is required
+              </span>
+            )}
             <input
               {...register("lastName", { required: true })}
               type="text"
               placeholder="Last Name"
             ></input>
+            {errors.lastName && (
+              <span className="errorText text-start">
+                This field is required
+              </span>
+            )}
             <input
               {...register("email", { required: true })}
               type="email"
               placeholder="Email"
             ></input>
+            {errors.email && (
+              <span className="errorText text-start">
+                This field is required
+              </span>
+            )}
             <input
-              {...register("password", { required: true })}
+              {...register("password", {
+                required: "You must specify a password",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+              })}
               type="password"
               placeholder="Password"
             ></input>
+            {errors.password && (
+              <span className="errorText text-start">
+                {errors.password.message}
+              </span>
+            )}
             <input
-              {...register("c_password", { required: true })}
+              {...register("c_password", {
+                validate: (value) =>
+                  value === watch("password") || "Passwords do not match",
+              })}
               type="password"
               placeholder="Confirm Password"
             ></input>
+            {errors.c_password && (
+              <span className="errorText text-start">
+                {errors.c_password.message}
+              </span>
+            )}
+            {errors.apiError && (
+              <span className="errorText text-start">
+                Email sudah digunakan, silahkan login atau registrasi menggunakan email
+                lain
+              </span>
+            )}
             <button className="px-5 mx-auto" type="submit">
-              Create
+              Sign Up
             </button>
           </form>
           <div className="text-center">
