@@ -4,11 +4,15 @@ import { IoIosPlay, IoIosPause } from "react-icons/io";
 import Login from "../pages/Login";
 import Popup from "./Popup";
 import { GoogleLogout } from "react-google-login";
+import { set } from "react-hook-form";
+import Swal from "sweetalert2";
 
 export default function Navbar() {
   // const [showLinks, setShowLinks] = useState(false);
   const [toggleOn, setToggleOn] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
@@ -19,7 +23,16 @@ export default function Navbar() {
 
   const logoutAccount = () => {
     localStorage.removeItem("token");
-    window.location.href = "/";
+    setSuccess(!success);
+    if (!success) {
+      Swal.fire("Sucess Logout!", "See you later!", "success").then(
+        (result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/";
+          }
+        }
+      );
+    }
   };
 
   const clientId =
@@ -86,15 +99,15 @@ export default function Navbar() {
           }`}
         >
           <button className="btnRegis">Hello</button>
-          <GoogleLogout
+          {/* <GoogleLogout
             clientId={clientId}
             render={(renderProps) => (
-              <button onClick={renderProps.onClick} className="btnLgn">
-                Logout
-              </button>
             )}
             onLogoutSuccess={logoutAccount}
-          ></GoogleLogout>
+          ></GoogleLogout> */}
+          <button onClick={logoutAccount} className="btnLgn">
+            Logout
+          </button>
         </div>
       ) : (
         <div

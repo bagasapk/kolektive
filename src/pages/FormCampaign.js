@@ -4,6 +4,7 @@ import foto from "../images/image-icon.png";
 import Footer from "../components/Footer";
 import { useForm, Controller } from "react-hook-form";
 import CampaignService from "../services/CampaignService";
+import Swal from "sweetalert2";
 
 const FormCampaign = () => {
   const {
@@ -12,6 +13,7 @@ const FormCampaign = () => {
     formState: { errors },
   } = useForm();
   const [uploadPhoto, setUploadedPhoto] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   const uploadedPhoto = (event) => {
     setUploadedPhoto(URL.createObjectURL(event));
@@ -30,7 +32,18 @@ const FormCampaign = () => {
     CampaignService.post(fd)
       .then((res) => {
         console.log(res.data);
-        window.location.href = "/event";
+        setSuccess(!success);
+        if(!success){
+          if (!success) {
+            Swal.fire("Event created!", "Share your event to the world!", "success").then(
+              (result) => {
+                if (result.isConfirmed) {
+                  window.location.href = "/event";
+                }
+              }
+            );
+          }
+        }
       })
       .catch((e) => {
         console.log(e);

@@ -87,13 +87,14 @@ const Event = () => {
                   onClick={() => (window.location.href = "/event/" + item.id)}
                   key={item.id}
                   className="card col-3"
-                  style={{ margin: "20px 50px", alignItems: "center" }}
+                  style={{ margin: "20px 50px", alignItems: "center",padding:'0', border:'none' }}
                 >
                   <img
                     // style={{ maxWidth: "100%" }}
                     class="card-img-top"
                     src={baseURL + item.path}
                     alt={item.id}
+                    style={{borderTopLeftRadius:'26px',borderTopRightRadius:'26px'}}
                   />
                   <div class="card-body">
                     <h5 class="card-title">{item.title}</h5>

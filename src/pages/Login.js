@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import logoLoginz from "../images/logoLogin.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
 import GoogleLogin, { useGoogleLogin } from "react-google-login";
 import google from "../images/google.png";
+import Swal from "sweetalert2";
 
 const Form = () => {
   const {
@@ -14,21 +15,29 @@ const Form = () => {
   } = useForm();
   const clientId =
     "1007961814003-4p65g13vnqa0q2q0p8buaf4civv37eqi.apps.googleusercontent.com";
-
+  const [success, setSuccess] = useState(false);
   const onSuccess = (res) => {
     // localStorage.setItem("token",'Bearer '+res.tokenId);
     AuthenticationService.loginGoogle(res.profileObj)
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.success.token);
-        window.location.href = "/";
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Success!",
+            `Hello Booster, Let's help others!`,
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/";
+            }
+          });
+        }
       })
       .catch((e) => {
         console.log(e);
       });
-  };
-  const onSuccessLogout = (res) => {
-    console.log("Logout successfully");
   };
   const onFailure = (res) => {
     console.log("Login Failed: res:", res);
@@ -47,7 +56,18 @@ const Form = () => {
       .then((response) => {
         localStorage.setItem("token", response.data.success.token);
         console.log(response.data);
-        window.location.href = "/";
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Success!",
+            `Hello Booster, Let's help others!`,
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/";
+            }
+          });
+        }
       })
       .catch((e) => {
         setError("apiError", { message: e });
@@ -104,10 +124,10 @@ const Form = () => {
               </button>
             </div>
             {errors.apiError && (
-                <p className="errorText text-center m-0">
-                  Email atau Password salah
-                </p>
-              )}
+              <p className="errorText text-center m-0">
+                Email atau Password salah
+              </p>
+            )}
             <p className="createAcc">
               {" "}
               You are new?{" "}

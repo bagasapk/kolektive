@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import Swal from "sweetalert2";
 import TransactionService from "../services/TransactionService";
 
 const FormTransaction = () => {
@@ -10,12 +11,24 @@ const FormTransaction = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [success, setSuccess] = useState(false);
 
   const onSubmit = (data) =>
     TransactionService.post(data, id)
       .then((response) => {
         console.log(response.data);
-        window.location.href = "/transactions";
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Transaction Created!",
+            "Please finish your transaction",
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/transactions";
+            }
+          });
+        }
       })
       .catch((e) => {
         console.log(e);

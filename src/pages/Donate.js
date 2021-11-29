@@ -7,6 +7,7 @@ import Popup from "../components/Popup";
 import FormTransaction from "./FormTransaction";
 import DonateService from "../services/DonateService";
 import ShareEvent from "./ShareEvent";
+import Swal from "sweetalert2";
 
 const Donate = () => {
   let { id } = useParams();
@@ -19,6 +20,7 @@ const Donate = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [truncate, setTruncated] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     getInfo();
@@ -87,15 +89,32 @@ const Donate = () => {
       .then((res) => {
         const allInfo = res.data.success;
         console.log(allInfo);
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Withdraw Requested!",
+            "Please wait until Admin contact you!",
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/event/" + id;
+            }
+          });
+        }
       })
       .catch((e) => {
         console.log(e);
+        Swal.fire("Error!", `Sorry, you can't withdraw right now!`, "error").then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/event/" + id;
+          }
+        });
       });
   };
 
   const truncatedHandler = () => {
     setTruncated(truncate ? false : true);
-    console.log(truncate)
+    console.log(truncate);
   };
 
   return (
@@ -268,13 +287,13 @@ const Donate = () => {
       )}
       {isOpen2 && (
         <Popup
-        content={
-          <>
-            <ShareEvent/>
-          </>
-        }
-        handleClose={togglePopup2}
-      />
+          content={
+            <>
+              <ShareEvent />
+            </>
+          }
+          handleClose={togglePopup2}
+        />
       )}
     </div>
   );

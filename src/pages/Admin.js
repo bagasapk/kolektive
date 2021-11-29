@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import AdminService from "../services/AdminService";
 
 const Admin = () => {
   const [info, setInfo] = useState();
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     getInfo();
@@ -19,7 +21,7 @@ const Admin = () => {
       })
       .catch((e) => {
         console.log(e);
-        window.location.href="/"
+        window.location.href = "/";
       });
   };
 
@@ -45,7 +47,16 @@ const Admin = () => {
       .then((res) => {
         const allInfo = res.data.success;
         setInfo(allInfo);
-        console.log(allInfo);
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire("Approved!", "success").then(
+            (result) => {
+              if (result.isConfirmed) {
+                window.location.href = "/admin";
+              }
+            }
+          );
+        }
       })
       .catch((e) => {
         console.log(e);

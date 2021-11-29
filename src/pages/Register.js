@@ -1,14 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import logoKolektive from "../logo/Logo.png";
 import google from "../images/google.png";
 import peep2 from "../images/big-image-2.png";
 import { useForm } from "react-hook-form";
 import AuthenticationService from "../services/AuthenticationService";
 import GoogleLogin, { useGoogleLogin } from "react-google-login";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { register, handleSubmit, setError, formState, watch } = useForm();
   const { errors } = formState;
+  const [success, setSuccess] = useState(false);
   const password = useRef({});
   password.current = watch("Password", "");
   // password.current = watch;
@@ -22,7 +24,18 @@ const Register = () => {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.success.token);
-        window.location.href = "/";
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Success!",
+            `Welcome Booster, Have fun!`,
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/";
+            }
+          });
+        }
       })
       .catch((e) => {
         console.log(e);
@@ -46,7 +59,18 @@ const Register = () => {
       .then((response) => {
         localStorage.setItem("token", response.data.success.token);
         console.log(response.data);
-        window.location.href = "/";
+        setSuccess(!success);
+        if (!success) {
+          Swal.fire(
+            "Success!",
+            `Welcome ${data.firstName}, Have fun!`,
+            "success"
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/";
+            }
+          });
+        }
       })
       .catch((e) => {
         setError("apiError", { message: e });
@@ -139,8 +163,8 @@ const Register = () => {
             )}
             {errors.apiError && (
               <span className="errorText text-start">
-                Email sudah digunakan, silahkan login atau registrasi menggunakan email
-                lain
+                Email sudah digunakan, silahkan login atau registrasi
+                menggunakan email lain
               </span>
             )}
             <button className="px-5 mx-auto" type="submit">
