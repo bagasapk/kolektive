@@ -71,7 +71,7 @@ const Admin = () => {
         <div className="text-start mx-5 campaignTitle rounded">
           <h1 className="m-0 px-5">LIST WITHDRAW</h1>
         </div>
-        <div className="m-5">
+        <div className="m-0 mt-4 m-md-5">
           <table class="table w-75 mx-auto transaction tableTransaction rounded">
             <thead>
               <tr>

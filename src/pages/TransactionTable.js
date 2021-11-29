@@ -53,7 +53,7 @@ const TransactionTable = () => {
         <button
           onClick={() => postDonate(id)}
           style={{ fontSize: "1.5rem" }}
-          className="px-5 mx-auto"
+          className="px-md-5 mx-auto transactionButton"
           type="submit"
         >
           Bayar
@@ -81,7 +81,7 @@ const TransactionTable = () => {
       <div className="text-start mx-5 campaignTitle rounded">
         <h1 className="m-0 px-5">LIST TRANSAKSI</h1>
       </div>
-      <div className="m-5">
+      <div className="mt-4 m-md-5">
         <table class="table w-75 mx-auto transaction tableTransaction rounded">
           <thead>
             <tr>

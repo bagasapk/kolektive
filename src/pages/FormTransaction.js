@@ -35,12 +35,12 @@ const FormTransaction = () => {
       });
 
   return (
-    <div className="formTransaction px-5">
+    <div className="formTransaction px-md-5 px-3">
       <h1>Masukkan Nominal Donasi</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="transactionBox my-4 d-flex flex-column align-items-start p-3">
           <p className="m-0 nominasi">Nominal Donasi</p>
-          <div className="d-flex">
+          <div className="d-md-flex justify-content-between">
             <p className="m-0 rp">RP.</p>
             <div>
               <input
@@ -51,7 +51,7 @@ const FormTransaction = () => {
                     message: "Minimum Rp.10000 to Donate",
                   },
                 })}
-                className="mx-3"
+                className="mx-md-3 mx-1"
                 type="number"
               ></input>
               {errors.amount && (
@@ -62,12 +62,12 @@ const FormTransaction = () => {
         </div>
         <div className="transactionBox d-flex flex-column align-items-start p-3">
           <p className="m-0 nominasi">Pesanmu Singkatmu untuk Event</p>
-          <div className="d-flex">
-            <p className="mx-4 rp"></p>
+          <div className="d-md-flex justify-content-between">
+            <p className="d-none d-md-block mx-4 rp"></p>
             <div>
               <input
                 {...register("message", { required: "This field is Required" })}
-                className="mx-3"
+                className="mx-md-3 mx-1"
                 type="text"
               ></input>
               {errors.message && (
@@ -76,7 +76,7 @@ const FormTransaction = () => {
             </div>
           </div>
         </div>
-        <button className="px-5 m-5 mx-auto" type="submit">
+        <button className="px-md-5 m-5 mx-auto" type="submit">
           Buat Pembayaran
         </button>
       </form>

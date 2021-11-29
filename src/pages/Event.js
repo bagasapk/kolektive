@@ -86,7 +86,7 @@ const Event = () => {
                 <button
                   onClick={() => (window.location.href = "/event/" + item.id)}
                   key={item.id}
-                  className="card col-3"
+                  className="card col-md-4 col-lg-4 col-xl-3"
                   style={{ margin: "20px 50px", alignItems: "center",padding:'0', border:'none' }}
                 >
                   <img

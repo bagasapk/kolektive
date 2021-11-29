@@ -1555,7 +1555,7 @@ button[type="submit"] {
     width: max-content;
     font-size: 0.75rem;
   }
-  .box {
+  .box,.transactionBox input {
     width: 100% !important;
   }
   .close-icon {
@@ -1636,16 +1636,28 @@ button[type="submit"] {
   .salinShare{
     margin-inline: 0 !important;
   }
+  .searchEvt {
+    height: auto;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .card{
+    margin: 20px !important;
+  }
+  .table>:not(caption)>*>*{
+    padding: 2px !important;
+  }
+  .transactionButton{
+    font-size: 1rem !important;
+    box-shadow: none !important; 
+  }
 }
 
 /* Galaxy Fold */
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
-  .searchEvt {
-    height: auto;
-    margin-top: 2rem;
-  }
+  
   .txtUpcoming p {
     font-size: 3rem;
     margin: 0;
@@ -1703,6 +1715,12 @@ button[type="submit"] {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .sideTitle {
     font-size: 1.5rem;
+  }
+  .card{
+    margin: 20px 40px !important;
+  }
+  .transactionBox input{
+    width: 90% !important;
   }
   .googleButton,
   .facebookButton {

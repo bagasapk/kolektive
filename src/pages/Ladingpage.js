@@ -265,11 +265,11 @@ const Ladingpage = () => {
             </div>
           </div>
         </div>
-        <div className="d-none d-md-block boxJudul1 mx-auto"></div>
+        <div className="d-none d-lg-block boxJudul1 mx-auto"></div>
         <div className="judul2 mx-auto">
           <p> GIMANA SIH KOLEKTIVE?</p>
         </div>
-        <div className="d-none d-md-block boxJudul2 mx-auto"></div>
+        <div className="d-none d-lg-block boxJudul2 mx-auto"></div>
 
         <div className="layer2LP mx-auto flex-wrap flex-xl-nowrap">
           <img className="img-fluid mx-5" src={fotodiza} />
