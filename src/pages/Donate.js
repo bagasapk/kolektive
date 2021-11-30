@@ -13,7 +13,7 @@ const Donate = () => {
   let { id } = useParams();
 
   const baseURL = "https://pacific-springs-44512.herokuapp.com/public/files/";
-  const mapURL = "https://www.google.co.id/maps/place/";
+  const mapURL = "https://www.google.co.id/maps/search/";
   const [info, setInfo] = useState("");
   const [info2, setInfo2] = useState("");
   const [infoWithdraw, setInfoWithdraw] = useState("");
