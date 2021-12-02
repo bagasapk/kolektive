@@ -8,9 +8,12 @@ import EventService from "../services/EventService";
 const Event = () => {
   const baseURL = "https://pacific-springs-44512.herokuapp.com/public/files/";
   const [info, setInfo] = useState([]);
-  var [operatorClicked, setOperatorClicked] = useState(0);
+  const [next, setNext] = useState(4);
+  const [clicked, setClicked] = useState(false);
+
   useEffect(() => {
     getInfo();
+    nextOperator();
   }, []);
 
   const getInfo = () => {
@@ -25,16 +28,12 @@ const Event = () => {
       });
   };
 
-  const indexOperator = () => {
-    var index = 6;
-    do {
-      if (operatorClicked >= 1) {
-        for (let i = 0; i < 10; i++) {
-          return index * 2;
-        }
-      }
-      return index;
-    } while (operatorClicked >= 1);
+  const nextOperator = (a) => {
+    if (clicked) {
+      setNext(next + a);
+    }
+    setClicked(!clicked);
+    console.log(next)
   };
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -72,7 +71,7 @@ const Event = () => {
         <div class="card-group justify-content-center">
           {info.length > 0 ? (
             info
-              .slice(0, indexOperator())
+              .slice(0, next)
               .filter((item) => {
                 if (searchTerm === "") {
                   return item;
@@ -87,14 +86,23 @@ const Event = () => {
                   onClick={() => (window.location.href = "/event/" + item.id)}
                   key={item.id}
                   className="card col-md-4 col-lg-4 col-xl-3"
-                  style={{ margin: "20px 50px", alignItems: "center",padding:'0', border:'none' }}
+                  style={{
+                    margin: "20px 50px",
+                    alignItems: "center",
+                    padding: "0",
+                    border: "none",
+                  }}
                 >
                   <img
                     // style={{ maxWidth: "100%" }}
                     class="card-img-top"
                     src={baseURL + item.path}
                     alt={item.id}
-                    style={{borderTopLeftRadius:'26px',borderTopRightRadius:'26px'}}
+                    style={{
+                      borderTopLeftRadius: "26px",
+                      borderTopRightRadius: "26px",
+                      maxHeight:'180px'
+                    }}
                   />
                   <div class="card-body">
                     <h5 class="card-title">{item.title}</h5>
@@ -111,7 +119,7 @@ const Event = () => {
         </div>
       </div>
       <button
-        onClick={() => setOperatorClicked(operatorClicked++)}
+        onClick={() => nextOperator(next)}
         className="col-11 col-md-4 col-xl-3 btnLoadEvent mx-auto"
       >
         Load More Event
