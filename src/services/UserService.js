@@ -1,11 +1,11 @@
 import http from "./http-common";
 
-const get = () => {
-  return http.get("/details");
+const post = () => {
+  return http.post("/details");
 };
 
 const UserService = {
-  get
+  post
 };
 
 export default UserService;

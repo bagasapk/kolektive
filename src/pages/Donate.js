@@ -8,6 +8,7 @@ import FormTransaction from "./FormTransaction";
 import DonateService from "../services/DonateService";
 import ShareEvent from "./ShareEvent";
 import Swal from "sweetalert2";
+import UserService from "../services/UserService";
 
 const Donate = () => {
   let { id } = useParams();
@@ -16,6 +17,7 @@ const Donate = () => {
   const mapURL = "https://www.google.co.id/maps/search/";
   const [info, setInfo] = useState("");
   const [info2, setInfo2] = useState("");
+  const [info3, setInfo3] = useState("");
   const [infoWithdraw, setInfoWithdraw] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -23,10 +25,18 @@ const Donate = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
+    getUser();
     getInfo();
     getWithdraw();
   }, []);
 
+  const getUser = () => {
+    UserService.post().then((res) => {
+      const userInfo2 = res.data.success;
+      setInfo3(userInfo2);
+      console.log(userInfo2);
+    });
+  };
   const getInfo = () => {
     EventService.getById(id)
       .then((res) => {
@@ -70,7 +80,7 @@ const Donate = () => {
   };
 
   const buttonWithdraw = () => {
-    if (info2.id === info.user_id && infoWithdraw === null) {
+    if (info2.id === info3.id && infoWithdraw === null) {
       return (
         <button
           onClick={() => postWithdraw(info.id)}
@@ -104,7 +114,11 @@ const Donate = () => {
       })
       .catch((e) => {
         console.log(e);
-        Swal.fire("Error!", `Sorry, you can't withdraw right now!`, "error").then((result) => {
+        Swal.fire(
+          "Error!",
+          `Sorry, you can't withdraw right now!`,
+          "error"
+        ).then((result) => {
           if (result.isConfirmed) {
             window.location.href = "/event/" + id;
           }
