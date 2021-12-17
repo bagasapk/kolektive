@@ -15,10 +15,6 @@ const FormCampaign = () => {
   const [uploadPhoto, setUploadedPhoto] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  const uploadedPhoto = (event) => {
-    setUploadedPhoto(URL.createObjectURL(event));
-    console.log(event);
-  };
   const onSubmit = (data) => {
     let file = data.file[0];
     let fd = new FormData();
@@ -81,7 +77,6 @@ const FormCampaign = () => {
               accept="image/png, image/gif, image/jpeg"
               {...register("file", {
                 required: true,
-                onChange: (e) => uploadedPhoto(e.target.files[0]),
               })}
               id="file"
               type="file"
